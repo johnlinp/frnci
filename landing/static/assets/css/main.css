@@ -3194,3 +3194,27 @@
 			}
 
 	}
+
+/* FRNCI */
+
+	.area-intro {
+		position: relative;
+	}
+
+	.area-intro h2 {
+		position: absolute;
+		left: 50px;
+		bottom: 40px;
+		font-size: 3em;
+		color: #fff;
+	}
+
+	.area-intro a {
+		opacity: .7;
+		transition: .5s;
+	}
+
+	.area-intro a:hover {
+		opacity: 1;
+		transition: .5s;
+	}
