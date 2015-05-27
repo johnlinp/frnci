@@ -2065,8 +2065,8 @@
 		input[type="submit"].special,
 		input[type="reset"].special,
 		.button.special {
-			background: #83d3c9;
-			border-color: #83d3c9;
+			background: #e67e22;
+			border-color: #f39c12;
 			color: #fff !important;
 		}
 
@@ -2074,8 +2074,8 @@
 			input[type="submit"].special:hover,
 			input[type="reset"].special:hover,
 			.button.special:hover {
-				background: #96dad1 !important;
-				border-color: #96dad1 !important;
+				background: #d35400 !important;
+				border-color: #f39c12 !important;
 			}
 
 		input[type="button"].fit,
@@ -2414,7 +2414,7 @@
 			-webkit-animation-fill-mode: forwards;
 			-ms-animation-fill-mode: forwards;
 			animation-fill-mode: forwards;
-			background: rgba(52, 27, 43, 0.5);
+			background: rgba(211, 84, 00, 0.5);
 			color: #fff;
 			display: inline-block;
 			opacity: 0;
@@ -3197,24 +3197,32 @@
 
 /* FRNCI */
 
-	.area-intro {
+	.area-interest {
 		position: relative;
 	}
 
-	.area-intro h2 {
+	.area-interest .overlay {
 		position: absolute;
-		left: 50px;
-		bottom: 40px;
-		font-size: 3em;
+		bottom: 10px;
 		color: #fff;
+		width: 100%;
 	}
 
-	.area-intro a {
+	.area-interest .larger {
+		font-size: 3em;
+	}
+
+	.area-interest .smaller {
+		font-weight: 500;
+		font-size: 1.5em;
+	}
+
+	.area-interest a {
 		opacity: .7;
 		transition: .5s;
 	}
 
-	.area-intro a:hover {
+	.area-interest a:hover {
 		opacity: 1;
 		transition: .5s;
 	}
