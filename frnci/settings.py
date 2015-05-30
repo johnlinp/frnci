@@ -56,12 +56,10 @@ WSGI_APPLICATION = 'frnci.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+import dj_database_url
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'frnci',
-    }
+    'default': dj_database_url.config(),
 }
 
 # Internationalization
