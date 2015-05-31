@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Import Locals</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/static/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="/static/assets/css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="/static/assets/css/ie/respond.min.js"></script><![endif]-->
+	</head>
+	<body class="contact">
+		<div id="page-wrapper">
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon fa-upload"></span>
+						<h2>Import Locals</h2>
+						<p>just an internal tool</p>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style4 special container 75%">
+
+							<div>
+
+								<form method="post" action="/locals/import/" enctype="multipart/form-data">
+									{% csrf_token %}
+									<p><input type="file" name="locals" /></p>
+									<p><input type="submit" value="upload" /></p>
+								</form>
+
+							<div>
+
+						</section>
+
+					{% for local in locals %}
+						<section class="wrapper style4 special container 75%">
+
+							<div>
+
+								<div>
+									<div>
+										Name: {{ local.name }}
+									</div>
+									<div>
+										Sex: {{ local.sex }}
+									</div>
+									<div>
+										Email: {{ local.email }}
+									</div>
+									<div>
+										Cell Phone: {{ local.cell_phone }}
+									</div>
+									<div>
+										Languages: {{ local.languages }}
+									</div>
+									<div>
+										Places: {{ local.places }}
+									</div>
+									<div>
+										Personalities: {{ local.personalities }}
+									</div>
+									<div>
+										Interests: {{ local.interests }}
+									</div>
+									<div>
+										Activities: {{ local.activities }}
+									</div>
+								</div>
+
+							<div>
+
+						</section>
+					{% endfor %}
+
+				</article>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="/static/assets/js/jquery.min.js"></script>
+			<script src="/static/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/static/assets/js/jquery.scrollgress.min.js"></script>
+			<script src="/static/assets/js/skel.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			<script src="/static/assets/js/main.js"></script>
+
+	</body>
+</html>
