@@ -37,41 +37,76 @@
 						<p>to explore local spirit and connect to local community</p>
 					</header>
 
-					<!-- One -->
-						<section class="wrapper style4 special container 75%">
+					{% for local in locals %}
+						<section class="wrapper style4 special">
 
 							<!-- Content -->
 								<div class="content container">
 
 									<div class="row">
 
-										<div class="4u 12u(narrower)">
+										<div class="3u">
 
 											<section>
 												<img src="/static/images/local-1.jpg" alt="" />
-												<header>
-													<h2>The North</h2>
-													<h3>22, Female</h3>
-													<p>English, Mandarin<br>
-													Local Culture<br>
-													Adventurous</p>
-												</header>
-												<a class="button special" href="https://john196.typeform.com/to/eJpZQb">Request to Meet</a>
+												<p><b>{{ local.name }}</b></p>
 											</section>
 
 										</div>
 
-										<div class="4u 12u(narrower)">
+										<div class="6u">
+
+											<section class="special">
+
+												<div class="row">
+
+													<div>
+														<p><h3>I speak...</h3></p>
+														<p>
+															{% for language in local.languages %}
+																{{ language }}<br>
+															{% endfor %}
+														</p>
+													</div>
+													<div>
+														<p><h3>I am...</h3></p>
+														<p>
+															{% for personality in local.personalities %}
+																{{ personality }}<br>
+															{% endfor %}
+														</p>
+													</div>
+													<div>
+														<p><h3>I like...</h3></p>
+														<p>
+															{% for interest in local.interests %}
+																{{ interest }}<br>
+															{% endfor %}
+														</p>
+													</div>
+
+												</div>
+
+												<div class="row">
+
+													<div>
+														<p><h3>What I like to share with travelers...</h3></p>
+														<p>
+															{% for activity in local.activities %}
+																{{ activity }}<br>
+															{% endfor %}
+														</p>
+													</div>
+
+												</div>
+
+											</section>
+
+										</div>
+
+										<div class="2u 12u(narrower)">
 
 											<section>
-												<img src="/static/images/local-2.jpg" alt="" />
-												<header>
-													<h2>The North</h2>
-													<h3>43, Male</h3>
-													<p>English, Mandarin, Swedish<br>
-													Art / Design<br>
-													Sharing</p>
-												</header>
 												<a class="button special" href="https://john196.typeform.com/to/eJpZQb">Request to Meet</a>
 											</section>
 
@@ -79,45 +114,11 @@
 
 									</div>
 
-									<div class="row">
-
-										<div class="4u 12u(narrower)">
-
-											<section>
-												<img src="/static/images/local-3.jpg" alt="" />
-												<header>
-													<h2>The South</h2>
-													<h3>22, Female</h3>
-													<p>English, Mandarin<br>
-													Food &amp; Drink<br>
-													Photogenic</p>
-												</header>
-												<a class="button special" href="https://john196.typeform.com/to/eJpZQb">Request to Meet</a>
-											</section>
-
-										</div>
-
-										<div class="4u 12u(narrower)">
-
-											<section>
-												<img src="/static/images/local-4.jpg" alt="" />
-												<header>
-													<h2>The South</h2>
-													<h3>21, Male</h3>
-													<p>English, Mandarin<br>
-													Sports &amp; Adventure<br>
-													Outgoing</p>
-												</header>
-												<a class="button special" href="https://john196.typeform.com/to/eJpZQb">Request to Meet</a>
-											</section>
-
-										</div>
-
-									</div>
 
 								</div>
 
 						</section>
+					{% endfor %}
 
 				</article>
 

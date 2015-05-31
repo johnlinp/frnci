@@ -11,41 +11,44 @@ def home(request):
 	return render(request, 'index.html')
 
 
-def locals_area(request, area):
-	return render(request, 'locals.html')
+def locals_area(request, area_str):
+	locals_info = []
+
+	area = models.Area.objects.get(name=area_str)
+
+	locals_ = models.Local.objects.all()
+	for local in locals_:
+		go_places = models.GoPlace.objects.filter(local=local)
+		areas = [go_place.place.area for go_place in go_places]
+		print local.display_name_en, [go_place.place for go_place in go_places]
+		if area not in areas:
+			continue
+		local_info = local.to_info()
+		locals_info.append(local_info)
+
+	return render(request, 'locals.html', {'locals': locals_info})
 
 
-def locals_interest(request, interest):
-	return render(request, 'locals.html')
+def locals_interest(request, interest_str):
+	locals_info = []
+
+	locals_ = models.Local.objects.all()
+	for local in locals_:
+		local_info = local.to_info()
+		locals_info.append(local_info)
+
+	return render(request, 'locals.html', {'locals': locals_info})
 
 
 def locals_manage(request):
 	locals_info = []
-	args = {
-		'locals': locals_info,
-	}
 
 	locals_ = models.Local.objects.all()
 	for local in locals_:
-		speak_languages = models.SpeakLanguage.objects.filter(local=local)
-		go_places = models.GoPlace.objects.filter(local=local)
-		has_personalities = models.HasPersonality.objects.filter(local=local)
-		has_interests = models.HasInterest.objects.filter(local=local)
-		do_activities = models.DoActivity.objects.filter(local=local)
-		local_info = {
-			'name': local.display_name_en,
-			'sex': local.sex,
-			'email': local.email_addr,
-			'cell_phone': local.cell_phone,
-			'languages': ', '.join([item.language.name for item in speak_languages]),
-			'places': ', '.join([item.place.name for item in go_places]),
-			'personalities': ', '.join([item.personality.name_zh_tw for item in has_personalities]),
-			'interests': ', '.join([item.interest.name_zh_tw for item in has_interests]),
-			'activities': ', '.join([item.activity.name_zh_tw for item in do_activities]),
-		}
+		local_info = local.to_info()
 		locals_info.append(local_info)
 
-	return render(request, 'manage-locals.html', args)
+	return render(request, 'manage-locals.html', {'locals': locals_info})
 
 
 def locals_import(request):
