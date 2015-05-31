@@ -20,7 +20,6 @@ def locals_area(request, area_str):
 	for local in locals_:
 		go_places = models.GoPlace.objects.filter(local=local)
 		areas = [go_place.place.area for go_place in go_places]
-		print local.display_name_en, [go_place.place for go_place in go_places]
 		if area not in areas:
 			continue
 		local_info = local.to_info()
