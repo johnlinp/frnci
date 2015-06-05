@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE HTML>
 <!--
 	Twenty by HTML5 UP
@@ -23,8 +24,8 @@
 					<h1 id="logo"><a href="#">FRNCI</a></h1>
 					<nav id="nav">
 						<ul>
-							<li class="current"><a href="#about-us" class="scrolly">About Us</a></li>
-							<li><a href="https://pin4.typeform.com/to/Zli6Pa" class="button special">Register to be Local</a></li>
+							<li class="current"><a href="#about-us" class="scrolly">{% trans "About Us" %}</a></li>
+							<li><a href="https://pin4.typeform.com/to/Zli6Pa" class="button special">{% trans "Register to be Local" %}</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -43,10 +44,10 @@
 						<header>
 							<h2>FRNCI</h2>
 						</header>
-						<p>Find Locals, Travel for Real.</p>
+						<p>{% trans "Find Locals, Travel for Real." %}</p>
 						<footer>
 							<ul class="buttons vertical">
-								<li><a href="#main" class="button fit scrolly">How it Works</a></li>
+								<li><a href="#main" class="button fit scrolly">{% trans "How it Works" %}</a></li>
 							</ul>
 						</footer>
 
@@ -65,10 +66,10 @@
 
 										<span class="icon featured fa-search"></span>
 										<header>
-											<h4>Step 1</h4>
-											<h3>Search for Locals</h3>
+											<h4>{% trans "Step 1" %}</h4>
+											<h3>{% trans "Search for Locals" %}</h3>
 										</header>
-										<p>Searching based on your travel destination or interest.</p>
+										<p>{% trans "Searching based on your travel destination or interest." %}</p>
 									</section>
 
 								</div>
@@ -77,10 +78,10 @@
 									<section>
 										<span class="icon featured fa-comments"></span>
 										<header>
-											<h4>Step 2</h4>
-											<h3>Match Online</h3>
+											<h4>{% trans "Step 2" %}</h4>
+											<h3>{% trans "Match Online" %}</h3>
 										</header>
-										<p>Fill in the online form, and get into contact after confirmation.</p>
+										<p>{% trans "Fill in the online form, and get into contact after confirmation." %}</p>
 									</section>
 
 								</div>
@@ -89,10 +90,10 @@
 									<section>
 										<span class="icon featured fa-users"></span>
 										<header>
-											<h4>Step 3</h4>
-											<h3>Meetup &amp; Befriend</h3>
+											<h4>{% trans "Step 3" %}</h4>
+											<h3>{% trans "Meetup &amp; Befriend" %}</h3>
 										</header>
-										<p>Locals and travelers meet each other, and get to know each other’s culture.</p>
+										<p>{% trans "Locals and travelers meet each other, and get to know each other's culture." %}</p>
 									</section>
 
 								</div>
@@ -102,21 +103,21 @@
 						<section class="wrapper style3 container special">
 
 							<header class="major">
-								<h2>Where are you going?</h2>
+								<h2>{% trans "Where are you going?" %}</h2>
 							</header>
 
 							<div class="row">
 								<div class="6u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/area/eastern/" class="image featured"><img src="/static/images/east.jpg" alt="" /><h2 class="overlay larger">East</h2></a>
+										<a href="/locals/area/eastern/" class="image featured"><img src="/static/images/east.jpg" alt="" /><h2 class="overlay larger">{% trans "East" %}</h2></a>
 									</section>
 
 								</div>
 								<div class="6u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/area/southern/" class="image featured"><img src="/static/images/south.jpg" alt="" /><h2 class="overlay larger">South</h2></a>
+										<a href="/locals/area/southern/" class="image featured"><img src="/static/images/south.jpg" alt="" /><h2 class="overlay larger">{% trans "South" %}</h2></a>
 									</section>
 
 								</div>
@@ -125,14 +126,14 @@
 								<div class="6u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/area/northern/" class="image featured"><img src="/static/images/north.jpg" alt="" /><h2 class="overlay larger">North</h2></a>
+										<a href="/locals/area/northern/" class="image featured"><img src="/static/images/north.jpg" alt="" /><h2 class="overlay larger">{% trans "North" %}</h2></a>
 									</section>
 
 								</div>
 								<div class="6u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/area/western/" class="image featured"><img src="/static/images/west.jpg" alt="" /><h2 class="overlay larger">West</h2></a>
+										<a href="/locals/area/western/" class="image featured"><img src="/static/images/west.jpg" alt="" /><h2 class="overlay larger">{% trans "West" %}</h2></a>
 									</section>
 
 								</div>
@@ -143,29 +144,29 @@
 						<section class="wrapper style3 container special">
 
 							<header class="major">
-								<h3>Or,</h3>
-								<h2>What interests you?</h2>
+								<h3>{% trans "Or," %}</h3>
+								<h2>{% trans "What interests you?" %}</h2>
 							</header>
 
 							<div class="row">
 								<div class="4u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/interest/local-culture/" class="image featured"><img src="/static/images/local-culture.jpg" alt="" /><h2 class="overlay smaller">Local Culture</h3></a>
+										<a href="/locals/interest/local-culture/" class="image featured"><img src="/static/images/local-culture.jpg" alt="" /><h2 class="overlay smaller">{% trans "Local Culture" %}</h3></a>
 									</section>
 
 								</div>
 								<div class="4u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/interest/art-design/" class="image featured"><img src="/static/images/art-design.jpg" alt="" /><h2 class="overlay smaller">Art &amp; Design</h2></a>
+										<a href="/locals/interest/art-design/" class="image featured"><img src="/static/images/art-design.jpg" alt="" /><h2 class="overlay smaller">{% trans "Art &amp; Design" %}</h2></a>
 									</section>
 
 								</div>
 								<div class="4u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/interest/nature-outdoors/" class="image featured"><img src="/static/images/nature-outdoors.jpg" alt="" /><h2 class="overlay smaller">Nature &amp; Outdoors</h2></a>
+										<a href="/locals/interest/nature-outdoors/" class="image featured"><img src="/static/images/nature-outdoors.jpg" alt="" /><h2 class="overlay smaller">{% trans "Nature &amp; Outdoors" %}</h2></a>
 									</section>
 
 								</div>
@@ -174,21 +175,21 @@
 								<div class="4u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/interest/sports-adventure/" class="image featured"><img src="/static/images/sports-adventure.jpg" alt="" /><h2 class="overlay smaller">Sports &amp; Adventure</h2></a>
+										<a href="/locals/interest/sports-adventure/" class="image featured"><img src="/static/images/sports-adventure.jpg" alt="" /><h2 class="overlay smaller">{% trans "Sports &amp; Adventure" %}</h2></a>
 									</section>
 
 								</div>
 								<div class="4u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/interest/food-drink/" class="image featured"><img src="/static/images/food-drink.jpg" alt="" /><h2 class="overlay smaller">Food &amp; Drink</h2></a>
+										<a href="/locals/interest/food-drink/" class="image featured"><img src="/static/images/food-drink.jpg" alt="" /><h2 class="overlay smaller">{% trans "Food &amp; Drink" %}</h2></a>
 									</section>
 
 								</div>
 								<div class="4u 12u(narrower)">
 
 									<section class="area-interest">
-										<a href="/locals/interest/film-music/" class="image featured"><img src="/static/images/film-music.jpg" alt="" /><h2 class="overlay smaller">Film &amp; Music</h2></a>
+										<a href="/locals/interest/film-music/" class="image featured"><img src="/static/images/film-music.jpg" alt="" /><h2 class="overlay smaller">{% trans "Film &amp; Music" %}</h2></a>
 									</section>
 
 								</div>
@@ -199,40 +200,40 @@
 						<section class="wrapper style2 container">
 
 							<header class="major">
-								<h2>Why FRNCI?</h2>
+								<h2>{% trans "Why FRNCI?" %}</h2>
 							</header>
 
-							<p><strong>If you are a traveler...</strong></p>
+							<p><strong>{% trans "If you are a traveler..." %}</strong></p>
 
-							<p>worrying about missing cool local events &amp; hidden spots<br>
-							longing to explore local culture and connect to local community<br>
-							having no idea where to find local friends with mutual interest</p>
+							<p>{% trans "worrying about missing cool local events &amp; hidden spots" %}<br>
+							{% trans "longing to explore local culture and connect to local community" %}<br>
+							{% trans "having no idea where to find local friends with mutual interest" %}</p>
 
-							<p><strong>If you are a local...</strong></p>
+							<p><strong>{% trans "If you are a local..." %}</strong></p>
 
-							<p>passionate about making friends from different culture<br>
-							interested in sharing local spirit and places you love<br>
-							looking forward to cross-culture exchange or language exchange</p>
+							<p>{% trans "passionate about making friends from different culture" %}<br>
+							{% trans "interested in sharing local spirit and places you love" %}<br>
+							{% trans "looking forward to cross-culture exchange or language exchange" %}</p>
 
 						</section>
 
 						<section id="about-us" class="wrapper container">
 
 									<header>
-										<h2>About Us</h2>
+										<h2>{% trans "About Us" %}</h2>
 									</header>
 
-									<p>We are locals from different cities in Taiwan, with great passion on travel, sharing and making new friends.</p>
-									<p>We believe the best way to know a place and its culture is to travel with sharing locals and explore local spirit together.</p>
-									<p>This platform aims at building a hospitality community of travelers and locals.  Through the experience of meeting each other and intercultural exchange, travelers get to know the hidden places and local info, while locals get to realize again how unique the familiar places are.</p>
+									<p>{% trans "We are locals from different cities in Taiwan, with great passion on travel, sharing and making new friends." %}</p>
+									<p>{% trans "We believe the best way to know a place and its culture is to travel with sharing locals and explore local spirit together." %}</p>
+									<p>{% trans "This platform aims at building a hospitality community of travelers and locals.  Through the experience of meeting each other and intercultural exchange, travelers get to know the hidden places and local info, while locals get to realize again how unique the familiar places are." %}</p>
 
 									<header>
-										<h3>Our Mission</h3>
+										<h3>{% trans "Our Mission" %}</h3>
 									</header>
 
-									<p>To provide travelers with the experience of authentic beauty</p>
-									<p>To provide locals with the chance to share local culture and spirit</p>
-									<p>To connect travelers and locals in a more genuine, and deeper way</p>
+									<p>{% trans "To provide travelers with the experience of authentic beauty" %}</p>
+									<p>{% trans "To provide locals with the chance to share local culture and spirit" %}</p>
+									<p>{% trans "To connect travelers and locals in a more genuine, and deeper way" %}</p>
 
 						</section>
 
@@ -242,7 +243,7 @@
 				<section id="cta">
 
 					<header>
-						<h2>Sign up to become a test pilot</h2>
+						<h2>{% trans "Sign up to become a test pilot" %}</h2>
 					</header>
 					<footer>
 						<ul class="icons">
