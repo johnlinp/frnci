@@ -8,7 +8,16 @@ import models
 
 
 def home(request):
-	return render(request, 'index.html')
+	context = {}
+	if request.user.is_authenticated():
+		try:
+			access = request.user.accountaccess_set.all()[0]
+		except IndexError:
+			access = None
+		else:
+			client = access.api_client
+			context['info'] = client.get_profile_info(raw_token=access.access_token)
+	return render(request, 'index.html', context)
 
 
 def locals_area(request, area_str):

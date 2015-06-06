@@ -24,6 +24,20 @@
 					<h1 id="logo"><a href="#">FRNCI</a></h1>
 					<nav id="nav">
 						<ul>
+							{% if user.is_authenticated %}
+								<li>Hi, {{ info.name }}.</li>
+								<li class="current"><a href="{% url 'logout' %}">Sign Out</a></li>
+							{% else %}
+								<li class="submenu">
+									<a href="#">Sign In</a>
+									{% for provider in allaccess_providers %}
+										<ul>
+											<li><a href="{% url 'allaccess-login' provider.name %}">with {{ provider.name|title }}</a></li>
+										</ul>
+									{% endfor %}
+								</li>
+							{% endif %}
+
 							<li class="current"><a href="#about-us" class="scrolly">{% trans "About Us" %}</a></li>
 							<li><a href="https://pin4.typeform.com/to/Zli6Pa" class="button special">{% trans "Register to be Local" %}</a></li>
 						</ul>
@@ -267,26 +281,6 @@
 					<ul class="copyright">
 						<li>&copy; FRNCI</li>
 					</ul>
-
-					{% if user.is_authenticated %}
-						<h2 class="heading">You are now signed in!</h2>
-						<div class="user-info">
-							<p>Your profile info is given below.</p>
-							<p><a href="{% url 'logout' %}">Logout</a></p>
-							<pre>
-								Hi, {{ info.name }}.
-							</pre>
-						</div>
-					{% else %}
-						<h2 class="heading">Login Test</h2>
-						<div class="form-signin">
-						{% for provider in allaccess_providers %}
-							<a class="button zocial {{ provider.name|lower }}" href="{% url 'allaccess-login' provider.name %}">
-								Sign in with {{ provider.name|title }}
-							</a>
-						{% endfor %}
-						</div>
-					{% endif %}
 
 				</footer>
 
