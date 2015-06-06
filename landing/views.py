@@ -50,6 +50,10 @@ def locals_manage(request):
 	return render(request, 'manage-locals.html', {'locals': locals_info})
 
 
+def accounts_profile(request):
+	return redirect('/')
+
+
 def locals_import(request):
 	if request.method != 'POST' or 'locals' not in request.FILES:
 		return redirect('/locals/manage/')
