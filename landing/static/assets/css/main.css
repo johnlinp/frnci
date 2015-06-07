@@ -3225,3 +3225,13 @@
 		opacity: 1;
 		transition: .5s;
 	}
+
+	.feedback-item {
+		max-width: 50%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.feedback-item img {
+		max-width: 100%;
+	}
