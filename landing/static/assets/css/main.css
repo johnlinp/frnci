@@ -3235,3 +3235,7 @@
 	.feedback-item img {
 		max-width: 100%;
 	}
+
+	.icon.featured {
+		opacity: 1;
+	}
