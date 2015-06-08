@@ -3236,6 +3236,10 @@
 		max-width: 100%;
 	}
 
+	.feedback-item b {
+		color: #d35400;
+	}
+
 	.icon.featured {
 		opacity: 1;
 	}
