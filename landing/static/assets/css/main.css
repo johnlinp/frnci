@@ -266,10 +266,6 @@
 		padding: 50px 0 0 50px;
 	}
 
-	.row {
-		margin: -50px 0 -1px -50px;
-	}
-
 	.row.uniform > * {
 		padding: 50px 0 0 50px;
 	}
@@ -477,10 +473,6 @@
 
 		.row > * {
 			padding: 40px 0 0 40px;
-		}
-
-		.row {
-			margin: -40px 0 -1px -40px;
 		}
 
 		.row.uniform > * {
@@ -3242,4 +3234,16 @@
 
 	.icon.featured {
 		opacity: 1;
+	}
+
+	.capital {
+		text-transform: uppercase;
+	}
+
+	.row.left {
+		text-align: left;
+	}
+
+	.bright {
+		color: #d35400;
 	}

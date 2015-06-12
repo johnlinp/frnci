@@ -41,79 +41,74 @@
 						<section class="wrapper style4 special">
 
 							<!-- Content -->
-								<div class="content container">
+								<div class="content container wrapper">
 
 									<div class="row">
 
-										<div class="3u">
+										<div class="6u 12u(narrower)">
 
 											<section>
+
 												<img src="/static/images/local-1.jpg" alt="" />
-												<p><b>{{ local.name }}</b></p>
-											</section>
-
-										</div>
-
-										<div class="6u">
-
-											<section class="special">
-
-												<div class="row">
-
-													<div>
-														<p><h3>I speak...</h3></p>
-														<p>
-															{% for language in local.languages %}
-																{{ language }}<br>
-															{% endfor %}
-														</p>
-													</div>
-													<div>
-														<p><h3>I am...</h3></p>
-														<p>
-															{% for personality in local.personalities %}
-																{{ personality }}<br>
-															{% endfor %}
-														</p>
-													</div>
-													<div>
-														<p><h3>I like...</h3></p>
-														<p>
-															{% for interest in local.interests %}
-																{{ interest }}<br>
-															{% endfor %}
-														</p>
-													</div>
-
-												</div>
-
-												<div class="row">
-
-													<div>
-														<p><h3>What I like to share with travelers...</h3></p>
-														<p>
-															{% for activity in local.activities %}
-																{{ activity }}<br>
-															{% endfor %}
-														</p>
-													</div>
-
-												</div>
+												<h2>{{ local.name }}</h2>
 
 											</section>
 
 										</div>
 
-										<div class="2u 12u(narrower)">
+										<div class="6u 12u(narrower)">
 
 											<section>
-												<a class="button special" href="https://john196.typeform.com/to/eJpZQb">Request to Meet</a>
+
+												<div class="row left">
+
+													<div class="12u">
+														<span class="capital bright">I speak...</span><br>
+														{% for language in local.languages %}
+															{{ language }}
+														{% endfor %}
+													</div>
+													<div class="12u">
+														<span class="capital bright">I am...</span><br>
+														{% for personality in local.personalities %}
+															{{ personality }}
+														{% endfor %}
+													</div>
+													<div class="12u">
+														<span class="capital bright">I like...</span><br>
+														{% for interest in local.interests %}
+															{{ interest }}
+														{% endfor %}
+													</div>
+
+												</div>
+
 											</section>
 
 										</div>
 
 									</div>
 
+									<div class="row">
+
+										<div class="12u 12u(narrower)">
+											<p><h3 class="bright">What I like to share with travelers...</h3></p>
+											<p>
+												{% for activity in local.activities %}
+													{{ activity }}<br>
+												{% endfor %}
+											</p>
+										</div>
+
+									</div>
+
+									<div class="row">
+
+										<div class="12u 12u(narrower)">
+											<a class="button special" href="https://john196.typeform.com/to/eJpZQb">Request to Meet</a>
+										</div>
+
+									</div>
 
 								</div>
 
