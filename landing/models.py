@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext
 from django.db import models
 
 
@@ -37,7 +38,7 @@ class Language(models.Model):
 	name = models.CharField(max_length=10)
 
 	def __str__(self):
-		return self.name.encode('utf8')
+		return ugettext(self.name).encode('utf8')
 
 	def __repr__(self):
 		return str(self)
