@@ -3247,3 +3247,7 @@
 	.bright {
 		color: #d35400;
 	}
+
+	.logo {
+		max-width: 10%;
+	}
