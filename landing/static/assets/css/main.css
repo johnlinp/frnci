@@ -1859,6 +1859,15 @@
 					background: #829bc9;
 				}
 
+			.icon.circle.fa-instagram {
+				background: #3f729b;
+				color: #fff;
+			}
+
+				.icon.circle.fa-instagram:hover {
+					background: #658eaf;
+				}
+
 			.icon.circle.fa-google-plus {
 				background: #db6b67;
 				color: #fff;
@@ -1883,6 +1892,15 @@
 			}
 
 				.icon.circle.fa-dribbble:hover {
+					background: #df93b8;
+				}
+
+			.icon.circle.fa-envelope {
+				background: #da83ae;
+				color: #fff;
+			}
+
+				.icon.circle.fa-envelope:hover {
 					background: #df93b8;
 				}
 

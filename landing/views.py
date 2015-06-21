@@ -168,3 +168,9 @@ def locals_import(request):
 		do_activity.save()
 
 	return redirect('/locals/manage/')
+
+
+def fa(request):
+	return render(request, 'fa.html')
+
+

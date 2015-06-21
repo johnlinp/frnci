@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     url(r'^locals/manage/$', 'landing.views.locals_manage', name='locals-manage'),
     url(r'^locals/import/$', 'landing.views.locals_import', name='locals-import'),
 
+    url(r'^fa$', 'landing.views.fa'),
+
     url(r'^logout/$', 'django.contrib.auth.views.logout_then_login', name='logout'),
     url(r'^accounts/', include('allaccess.urls')),
 
