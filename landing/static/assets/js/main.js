@@ -118,12 +118,9 @@
 			var $pilotEmail = $('#pilot-email'),
 			    $pilotSubmit = $('#pilot-submit');
 
-			$pilotEmail.keyup(function(evt) {
-				if (event.which != 13) {
-					return;
-				}
-
+			var submitPilotEmail = function() {
 				$.get('/pilot/', {email: $pilotEmail.val()}, function(result) {
+					console.log(result);
 					if (result.success) {
 						$pilotSubmit.val('Okay!');
 						$pilotSubmit.removeClass().addClass('okay');
@@ -132,8 +129,17 @@
 						$pilotSubmit.removeClass().addClass('danger');
 					}
 				}, 'json');
+			}
+
+			$pilotEmail.keyup(function(evt) {
+				if (evt.which == 13) {
+					submitPilotEmail();
+				}
 			});
 
+			$pilotSubmit.click(function(evt) {
+				submitPilotEmail();
+			});
 	});
 
 })(jQuery);

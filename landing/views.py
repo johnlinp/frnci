@@ -178,7 +178,14 @@ def pilot(request):
 	result = {'success': False}
 	email = request.GET.get('email', None)
 
-	if not email or '@' not in email:
+	def is_valid_email(email):
+		if '@' not in email:
+			return False
+		if email.startswith('@') or email.endswith('@'):
+			return False
+		return True
+
+	if not email or not is_valid_email(email):
 		return HttpResponse(json.dumps(result))
 
 	try:
