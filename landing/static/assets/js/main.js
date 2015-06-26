@@ -113,6 +113,27 @@
 
 			}
 
+
+		// FRNCI
+			var $pilotEmail = $('#pilot-email'),
+			    $pilotSubmit = $('#pilot-submit');
+
+			$pilotEmail.keyup(function(evt) {
+				if (event.which != 13) {
+					return;
+				}
+
+				$.get('/pilot/', {email: $pilotEmail.val()}, function(result) {
+					if (result.success) {
+						$pilotSubmit.val('Okay!');
+						$pilotSubmit.removeClass().addClass('okay');
+					} else {
+						$pilotSubmit.val('Check Again!');
+						$pilotSubmit.removeClass().addClass('danger');
+					}
+				}, 'json');
+			});
+
 	});
 
 })(jQuery);

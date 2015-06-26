@@ -134,3 +134,8 @@ class DoActivity(models.Model):
 	activity = models.ForeignKey(Activity)
 
 
+class Pilot(models.Model):
+	email = models.EmailField()
+	ip = models.CharField(max_length=20)
+	timestamp = models.DateTimeField(auto_now=True)
+

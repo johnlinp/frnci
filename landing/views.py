@@ -2,13 +2,17 @@
 
 import re
 import csv
+import json
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.template.context_processors import csrf
 import models
 
 
 def home(request):
 	context = {}
+	context.update(csrf(request))
 	if request.user.is_authenticated():
 		try:
 			access = request.user.accountaccess_set.all()[0]
@@ -168,6 +172,38 @@ def locals_import(request):
 		do_activity.save()
 
 	return redirect('/locals/manage/')
+
+
+def pilot(request):
+	result = {'success': False}
+	email = request.GET.get('email', None)
+
+	if not email or '@' not in email:
+		return HttpResponse(json.dumps(result))
+
+	try:
+		old = models.Pilot.objects.get(email=email)
+		result['success'] = True
+		return HttpResponse(json.dumps(result))
+	except models.Pilot.DoesNotExist:
+		pass
+
+	def get_client_ip(request):
+		x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+		if x_forwarded_for:
+			ip = x_forwarded_for.split(',')[0]
+		else:
+			ip = request.META.get('REMOTE_ADDR')
+		return ip
+
+	pilot = models.Pilot()
+	pilot.email = email
+	pilot.ip = get_client_ip(request)
+	pilot.save()
+
+	result['success'] = True
+
+	return HttpResponse(json.dumps(result))
 
 
 def fa(request):
