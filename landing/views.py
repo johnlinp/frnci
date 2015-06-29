@@ -4,6 +4,7 @@ import re
 import csv
 import json
 from django.http import HttpResponse
+from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.template.context_processors import csrf
@@ -53,6 +54,8 @@ def locals_interest(request, interest_str):
 
 
 def locals_manage(request):
+	if not request.user.is_staff:
+		return redirect('/admin/')
 	locals_info = []
 
 	locals_ = models.Local.objects.all()
@@ -64,8 +67,8 @@ def locals_manage(request):
 
 
 def locals_import(request):
-	if request.method != 'POST' or 'locals' not in request.FILES:
-		return redirect('/locals/manage/')
+	if not request.user.is_staff or request.method != 'POST' or 'locals' not in request.FILES:
+		return redirect(reverse('locals-manage'))
 
 	models.Local.objects.all().delete()
 	models.SpeakLanguage.objects.all().delete()
@@ -171,7 +174,7 @@ def locals_import(request):
 		do_activity.activity = activity
 		do_activity.save()
 
-	return redirect('/locals/manage/')
+	return redirect(reverse('locals-manage'))
 
 
 def pilot(request):

@@ -32,7 +32,7 @@
 
 							<div>
 
-								<form method="post" action="/locals/import/" enctype="multipart/form-data">
+								<form method="post" action="{% url 'locals-import' %}" enctype="multipart/form-data">
 									{% csrf_token %}
 									<p><input type="file" name="locals" /></p>
 									<p><input type="submit" value="upload" /></p>
