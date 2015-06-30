@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-30 13:17+0800\n"
+"POT-Creation-Date: 2015-06-30 14:15+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: templates/index.html:30
+msgid "Hi, "
+msgstr "嗨，"
+
+#: templates/index.html:31
+msgid "Sign Out"
+msgstr "登出"
+
+#: templates/index.html:34
+msgid "Sign In"
+msgstr "登入"
 
 #: templates/index.html:43 templates/index.html.py:287
 msgid "About Us"

@@ -27,14 +27,14 @@
 					<nav id="nav">
 						<ul>
 							{% if user.is_authenticated %}
-								<li>Hi, {{ info.name }}.</li>
-								<li class="current"><a href="{% url 'logout' %}">Sign Out</a></li>
+								<li>{% trans "Hi, " %}{{ info.name }}</li>
+								<li class="current"><a href="{% url 'logout' %}">{% trans "Sign Out" %}</a></li>
 							{% else %}
 								<li class="submenu">
-									<a href="#">Sign In</a>
+									<a href="#">{% trans "Sign In" %}</a>
 									{% for provider in allaccess_providers %}
 										<ul>
-											<li><a href="{% url 'allaccess-login' provider.name %}">with {{ provider.name|title }}</a></li>
+											<li><a href="{% url 'allaccess-login' provider.name %}">{{ provider.name|title }}</a></li>
 										</ul>
 									{% endfor %}
 								</li>
