@@ -120,7 +120,7 @@
 						<section class="special container">
 							<h1>Want to see more locals?</h1>
 							{% for provider in allaccess_providers %}
-								<p><a class="button special">Sign in with {{ provider.name|title }} to see more</a></p>
+								<p><a class="button special" href="{% url 'allaccess-login' provider.name %}">Sign in with {{ provider.name|title }} to see more</a></p>
 							{% endfor %}
 						</section>
 					{% endif %}
