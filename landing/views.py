@@ -26,7 +26,11 @@ def home(request):
 
 
 def locals_area(request, area_str):
+	context = {}
 	locals_info = []
+	context['locals'] = locals_info
+
+	show_full = request.user.is_authenticated()
 
 	area = models.Area.objects.get(name=area_str)
 
@@ -39,18 +43,29 @@ def locals_area(request, area_str):
 		local_info = local.to_info()
 		locals_info.append(local_info)
 
-	return render(request, 'locals.html', {'locals': locals_info})
+		if not show_full and len(locals_info) >= 3:
+			break
+
+	return render(request, 'locals.html', context)
 
 
 def locals_interest(request, interest_str):
+	context = {}
 	locals_info = []
+	context['locals'] = locals_info
+
+	show_full = request.user.is_authenticated()
 
 	locals_ = models.Local.objects.all()
+
 	for local in locals_:
 		local_info = local.to_info()
 		locals_info.append(local_info)
 
-	return render(request, 'locals.html', {'locals': locals_info})
+		if not show_full and len(locals_info) >= 3:
+			break
+
+	return render(request, 'locals.html', context)
 
 
 def locals_manage(request):
