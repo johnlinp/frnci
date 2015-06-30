@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-13 11:37+0800\n"
+"POT-Creation-Date: 2015-06-30 13:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: templates/index.html:43 templates/index.html.py:290
+#: templates/index.html:43 templates/index.html.py:287
 msgid "About Us"
 msgstr "關於我們"
 
@@ -30,9 +30,13 @@ msgstr "https://pin4.typeform.com/to/OS3BNX"
 msgid "Register to be Local"
 msgstr "我想帶路"
 
-#: templates/index.html:63
+#: templates/index.html:61
 msgid "Find Locals, Travel for Real."
 msgstr "找個當地人帶路吧"
+
+#: templates/index.html:63
+msgid "Explore Local Spirit with Hospitable Locals"
+msgstr "跟著當地人的腳步，感受當地真實的溫度"
 
 #: templates/index.html:66
 msgid "How it Works"
@@ -48,7 +52,7 @@ msgstr "尋找當地人"
 
 #: templates/index.html:88
 msgid "Searching based on your travel destination or interest."
-msgstr "以旅行目的地或個人興趣作為搜尋依據"
+msgstr "以目的地或興趣作為搜尋依據"
 
 #: templates/index.html:97
 msgid "Step 2"
@@ -60,7 +64,7 @@ msgstr "線上媒合"
 
 #: templates/index.html:100
 msgid "Fill in the online form, and get into contact after confirmation."
-msgstr "線上填寫預約表單 平台確認後提供聯繫方式"
+msgstr "填寫預約表單 平台提供聯繫⽅式"
 
 #: templates/index.html:109
 msgid "Step 3"
@@ -73,11 +77,11 @@ msgstr "見面交流"
 #: templates/index.html:112
 msgid ""
 "Locals and travelers meet each other, and get to know each other's culture."
-msgstr "當地人與旅人見面交流 在互動中認識彼此文化"
+msgstr "當地人與旅人實體交流"
 
 #: templates/index.html:122
 msgid "Where are you going?"
-msgstr "你要去哪裡旅行呢？"
+msgstr "你想去哪裡旅行呢？"
 
 #: templates/index.html:129
 msgid "East"
@@ -96,115 +100,98 @@ msgid "West"
 msgstr "西部"
 
 #: templates/index.html:163
-msgid "Or,"
-msgstr "或是，"
-
-#: templates/index.html:164
 msgid "What interests you?"
 msgstr "你對什麼感興趣呢？"
 
-#: templates/index.html:171
+#: templates/index.html:170
 msgid "Local Culture"
 msgstr "在地文化"
 
-#: templates/index.html:178
+#: templates/index.html:177
 msgid "Art &amp; Design"
 msgstr "藝術/設計"
 
-#: templates/index.html:185
+#: templates/index.html:184
 msgid "Nature &amp; Outdoors"
 msgstr "大自然/戶外"
 
-#: templates/index.html:194
+#: templates/index.html:193
 msgid "Sports &amp; Adventure"
 msgstr "運動/冒險"
 
-#: templates/index.html:201
+#: templates/index.html:200
 msgid "Food &amp; Drink"
-msgstr "吃喝"
+msgstr "美食"
 
-#: templates/index.html:208
+#: templates/index.html:207
 msgid "Film &amp; Music"
 msgstr "電影/音樂"
 
-#: templates/index.html:219
+#: templates/index.html:218
 msgid "Why FRNCI?"
 msgstr "為什麼要用 FRNCI ？"
 
-#: templates/index.html:222
+#: templates/index.html:221
 msgid "If you are a traveler..."
-msgstr "如果你是這樣的旅人…"
+msgstr "【關於旅人】"
+
+#: templates/index.html:223
+msgid "Want to know more about the special events &amp; hidden spots"
+msgstr "想要有個朋友當地食宿行程一手包的你"
 
 #: templates/index.html:224
-msgid "worrying about missing cool local events &amp; hidden spots"
-msgstr "擔心無法獲得第一手在地資訊，而錯過有趣活動和私房景點"
-
-#: templates/index.html:225
-msgid "longing to explore local culture and connect to local community"
-msgstr "渴望探索道地文化，期待與當地生活有更緊密的連結"
+msgid "Want to meet locals in a deeper way"
+msgstr "想要了解更多私房景點或探索當地文化的你"
 
 #: templates/index.html:226
-msgid "having no idea where to find local friends with mutual interest"
-msgstr "不知道怎麼找到與你有共同興趣而處得來的當地朋友"
+msgid "If you are a local..."
+msgstr "【關於當地人】"
 
 #: templates/index.html:228
-msgid "If you are a local..."
-msgstr "如果你是這樣的當地人…"
+msgid "Want to make foreign friends and learn new language"
+msgstr "想認識不同文化背景的外國朋友的你"
 
-#: templates/index.html:230
-msgid "passionate about making friends from different culture"
-msgstr "非常喜歡認識來自不同文化或成⻑背景的朋友"
+#: templates/index.html:229
+msgid "Want to share more about your lovely culture and daily life"
+msgstr "想擴展世界朋友版圖的你"
 
-#: templates/index.html:231
-msgid "interested in sharing local spirit and places you love"
-msgstr "樂於跟外地人分享在地文化與體驗當地生活"
+#: templates/index.html:291
+msgid "Crazy Backpacker"
+msgstr "瘋狂背包客"
 
-#: templates/index.html:232
-msgid "looking forward to cross-culture exchange or language exchange"
-msgstr "期待文化交流的火花或語言交換的樂趣"
+#: templates/index.html:292
+msgid "Cultural Enthusiast"
+msgstr "國際文創人"
 
 #: templates/index.html:293
-msgid ""
-"We are locals from different cities in Taiwan, with great passion on travel, "
-"sharing and making new friends."
-msgstr "我們是一群非常熱愛旅行，樂於分享，喜歡認識新朋友的台灣人!"
+msgid "Delicacy Blogger"
+msgstr "美食部落客"
 
 #: templates/index.html:294
-msgid ""
-"We believe the best way to know a place and its culture is to travel with "
-"sharing locals and explore local spirit together."
-msgstr ""
-"我們希望讓初到異地的旅人透過樂於分享的當地人，有機會真正走進當地人的生活，體"
-"驗道地的文化!"
+msgid "Passionate Tour Guide"
+msgstr "領隊導遊哥"
 
 #: templates/index.html:295
-msgid ""
-"This platform aims at building a hospitality community of travelers and "
-"locals.  Through the experience of meeting each other and intercultural "
-"exchange, travelers get to know the hidden places and local info, while "
-"locals get to realize again how unique the familiar places are."
-msgstr ""
-"此平台回歸到純粹分享與互助的精神，讓雙方在見面交流的過程中，更加瞭解彼此文"
-"化，讓旅人有機會認識只有當地人才知道的真實的美，也讓當地人透過旅人的眼光，重"
-"新發現原本習以為常的角落多麽獨特!"
+msgid "Easy Going Musician"
+msgstr "音樂夢想家"
 
-#: templates/index.html:298
+#: templates/index.html:299
 msgid "Our Mission"
-msgstr "使命"
-
-#: templates/index.html:301
-msgid "To provide travelers with the experience of authentic beauty"
-msgstr "讓每個旅人能獲得多元道地的生活體驗"
+msgstr "Our Mission"
 
 #: templates/index.html:302
-msgid "To provide locals with the chance to share local culture and spirit"
-msgstr "讓每個當地人都能分享心中的在地生活"
+msgid "To provide travelers with the experience of authentic beauty"
+msgstr "「不管在哪裡，人都是最美的風景。」"
 
 #: templates/index.html:303
-msgid "To connect travelers and locals in a more genuine, and deeper way"
-msgstr "讓每次人與人的連結都是一次以不同角度認識世界的旅程"
+msgid "To provide locals with the chance to share local culture and spirit"
+msgstr "而我們，正是負責把這些人串在一起的橋樑。"
 
-#: templates/index.html:313
+#: templates/index.html:304
+msgid "To connect travelers and locals in a more genuine, and deeper way"
+msgstr " "
+
+#: templates/index.html:314
 msgid "Sign up to become a test pilot"
 msgstr "平台正式上線後，我們會馬上通知你!"
 
@@ -240,11 +227,14 @@ msgstr "https://pin4.typeform.com/to/HY8oAJ"
 msgid "Request to Meet"
 msgstr "我想媒合"
 
+#: templates/makemessages.html:1
 msgid "Chinese"
 msgstr "中文"
 
+#: templates/makemessages.html:2
 msgid "Taiwanese"
 msgstr "台語"
 
+#: templates/makemessages.html:3
 msgid "Cantonese"
 msgstr "廣東話"
