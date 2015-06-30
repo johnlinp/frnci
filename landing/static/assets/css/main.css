@@ -3281,3 +3281,7 @@
 		color: #2ecc71 !important;
 	}
 
+	.local-image {
+		max-width: 12em;
+	}
+

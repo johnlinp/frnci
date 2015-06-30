@@ -25,6 +25,7 @@ class Local(models.Model):
 			'name': self.display_name_en,
 			'sex': dict(Local.SEX)[self.sex],
 			'email': self.email_addr,
+			'email_hash': hash(self.email_addr) % 10000000000,
 			'cell_phone': self.cell_phone,
 			'languages': [item.language for item in speak_languages],
 			'places': [item.place for item in go_places],
