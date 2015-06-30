@@ -136,14 +136,15 @@ def locals_import(request):
 	rows = [row for row in reader]
 
 	rows.pop(0)
-	rows.pop(0)
 
 	for row in rows:
+		row.pop(0)
+
 		local = models.Local()
 		local.display_name_en = row[1]
 		local.sex = 'F' if row[2] == '女生' else 'M'
 		local.email_addr = row[38]
-		local.cell_phone = row[39]
+		local.cell_phone = row[39][:20]
 		local.save()
 
 		for idx, language_str in enumerate(language_strs):
@@ -163,7 +164,7 @@ def locals_import(request):
 				go_place.save()
 
 		def insert_item(whole_str, main_model, relation_model, item_str):
-			strs = re.split(r'、|，| |,', whole_str)
+			strs = re.split(r'、|，| |,|。', whole_str)
 			for str_ in strs:
 				str_ = str_.strip()
 				if not str_:
