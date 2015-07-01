@@ -3,8 +3,10 @@
 import re
 import csv
 import json
+import math
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.template.context_processors import csrf
@@ -54,11 +56,24 @@ def locals_interest(request, interest_str):
 	locals_info = []
 	context['locals'] = locals_info
 
+	interest_str_list = [
+		'art-design',
+		'film-music',
+		'food-drink',
+		'local-culture',
+		'nature-outdoors',
+		'sports-adventure',
+	]
+
 	show_full = request.user.is_authenticated()
 
 	locals_ = models.Local.objects.all()
 
-	for local in locals_:
+	num_per_page = math.ceil(locals_.count() / 6.0)
+	paginator = Paginator(locals_, num_per_page)
+	index = interest_str_list.index(interest_str) + 1
+
+	for local in paginator.page(index):
 		local_info = local.to_info()
 		locals_info.append(local_info)
 
