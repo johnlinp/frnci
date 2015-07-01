@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-30 14:15+0800\n"
+"POT-Creation-Date: 2015-07-01 09:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,11 +149,11 @@ msgstr "【關於旅人】"
 
 #: templates/index.html:223
 msgid "Want to know more about the special events &amp; hidden spots"
-msgstr "想要有個朋友當地食宿行程一手包的你"
+msgstr "給想要了解更多私房景點或探索當地文化的你"
 
 #: templates/index.html:224
 msgid "Want to meet locals in a deeper way"
-msgstr "想要了解更多私房景點或探索當地文化的你"
+msgstr "給想要深度交流興趣相似的新朋友的你"
 
 #: templates/index.html:226
 msgid "If you are a local..."
@@ -165,7 +165,7 @@ msgstr "想認識不同文化背景的外國朋友的你"
 
 #: templates/index.html:229
 msgid "Want to share more about your lovely culture and daily life"
-msgstr "想擴展世界朋友版圖的你"
+msgstr "給想分享更多你自己的文化與生活體驗的你"
 
 #: templates/index.html:291
 msgid "Crazy Backpacker"
@@ -193,15 +193,15 @@ msgstr "Our Mission"
 
 #: templates/index.html:302
 msgid "To provide travelers with the experience of authentic beauty"
-msgstr "「不管在哪裡，人都是最美的風景。」"
+msgstr "讓旅人體驗最貼近當地的生活之美"
 
 #: templates/index.html:303
 msgid "To provide locals with the chance to share local culture and spirit"
-msgstr "而我們，正是負責把這些人串在一起的橋樑。"
+msgstr "讓當地人盡情分享道地生活與文化"
 
 #: templates/index.html:304
 msgid "To connect travelers and locals in a more genuine, and deeper way"
-msgstr " "
+msgstr "連結旅人與當地人，深度交流不再是難事"
 
 #: templates/index.html:314
 msgid "Sign up to become a test pilot"
