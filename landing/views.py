@@ -100,51 +100,7 @@ def locals_import(request):
 	if not request.user.is_staff or request.method != 'POST' or 'locals' not in request.FILES:
 		return redirect(reverse('locals-manage'))
 
-	models.Local.objects.all().delete()
-	models.SpeakLanguage.objects.all().delete()
-	models.GoPlace.objects.all().delete()
-	models.Personality.objects.all().delete()
-	models.HasPersonality.objects.all().delete()
-	models.Interest.objects.all().delete()
-	models.HasInterest.objects.all().delete()
-	models.Activity.objects.all().delete()
-	models.DoActivity.objects.all().delete()
-
-	language_strs = [
-		'Chinese',
-		'Taiwanese',
-		'English',
-		'Cantonese',
-		'Japanese',
-		'Korean',
-		'Spanish',
-		'French',
-		'German',
-		'Italian',
-		'Portuguese',
-		'Thai',
-		'Vietnamese',
-		'Malay',
-	]
-
-	place_strs = [
-		'Taipei',
-		'Taoyuan',
-		'Hsinchu',
-		'Miaoli',
-		'Taichung',
-		'Changhua',
-		'Yunlin',
-		'Chiayi',
-		'Tainan',
-		'Nantou',
-		'Kaohsiung',
-		'Pingtung',
-		'Taitung',
-		'Hualien',
-		'Yilan',
-		'Outlying Islands',
-	]
+	_clear_all_locals()
 
 	file_read = request.FILES['locals']
 	reader = csv.reader(file_read)
@@ -152,58 +108,33 @@ def locals_import(request):
 
 	rows.pop(0)
 
-	for row in rows:
-		row.pop(0)
+	paginator = Paginator(rows, 2)
 
-		local = models.Local()
-		local.display_name_en = row[1]
-		local.sex = 'F' if row[2] == '女生' else 'M'
-		local.email_addr = row[38]
-		local.cell_phone = row[39][:20]
-		local.save()
+	for idx in paginator.page_range:
+		page = paginator.page(idx)
+		main_row = page.object_list[0]
+		en_row = page.object_list[1]
 
-		for idx, language_str in enumerate(language_strs):
-			if row[3 + idx]:
-				language = models.Language.objects.get(name=language_str)
-				speak_language = models.SpeakLanguage()
-				speak_language.local = local
-				speak_language.language = language
-				speak_language.save()
+		name = main_row[1]
+		sex = 'F'
+		email = main_row[28]
+		cell_phone = main_row[29]
 
-		for idx, place_str in enumerate(place_strs):
-			if row[18 + idx]:
-				place = models.Place.objects.get(name=place_str)
-				go_place = models.GoPlace()
-				go_place.local = local
-				go_place.place = place
-				go_place.save()
+		place_en_strs       = [place_en_str       for place_en_str       in en_row[3:7]     if place_en_str]
+		interest_en_strs    = [interest_en_str    for interest_en_str    in en_row[7:11]    if interest_en_str]
+		language_en_strs    = [language_en_str    for language_en_str    in en_row[11:15]   if language_en_str]
+		personality_zh_strs = [personality_zh_str for personality_zh_str in main_row[15:19] if personality_zh_str]
+		personality_en_strs = [personality_en_str for personality_en_str in en_row[15:19]   if personality_en_str]
+		hobby_zh_strs       = [hobby_zh_str       for hobby_zh_str       in main_row[19:23] if hobby_zh_str]
+		hobby_en_strs       = [hobby_en_str       for hobby_en_str       in en_row[19:23]   if hobby_en_str]
 
-		def insert_item(whole_str, main_model, relation_model, item_str):
-			strs = re.split(r'、|，| |,|。', whole_str)
-			for str_ in strs:
-				str_ = str_.strip()
-				if not str_:
-					continue
-				try:
-					main_item = main_model.objects.get(name_zh_tw=str_)
-				except main_model.DoesNotExist:
-					main_item = main_model(name_en=str_, name_zh_tw=str_)
-					main_item.save()
-				relation_item = relation_model()
-				relation_item.local = local
-				setattr(relation_item, item_str, main_item)
-				relation_item.save()
+		activities_zh_str = main_row[23]
+		activities_en_str = en_row[23]
 
-		insert_item(row[35], models.Personality, models.HasPersonality, 'personality')
-		insert_item(row[36], models.Interest, models.HasInterest, 'interest')
+		places_en_str = ' '.join(place_en_strs)
+		place_en_strs = places_en_str.split()
 
-		activities_str = row[37]
-		activity = models.Activity(name_en=activities_str, name_zh_tw=activities_str)
-		activity.save()
-		do_activity = models.DoActivity()
-		do_activity.local = local
-		do_activity.activity = activity
-		do_activity.save()
+		_add_single_local(name, sex, email, cell_phone, language_en_strs, place_en_strs, personality_zh_strs, personality_en_strs, interest_en_strs, hobby_zh_strs, hobby_en_strs, activities_zh_str, activities_en_str)
 
 	return redirect(reverse('locals-manage'))
 
@@ -250,4 +181,75 @@ def pilot(request):
 def fa(request):
 	return render(request, 'fa.html')
 
+
+def _clear_all_locals():
+	models.Local.objects.all().delete()
+	models.SpeakLanguage.objects.all().delete()
+	models.GoPlace.objects.all().delete()
+	models.Personality.objects.all().delete()
+	models.HasPersonality.objects.all().delete()
+	models.Hobby.objects.all().delete()
+	models.HasHobby.objects.all().delete()
+	models.Activity.objects.all().delete()
+	models.DoActivity.objects.all().delete()
+	models.HasInterest.objects.all().delete()
+
+
+def _add_single_local(name, sex, email, cell_phone, language_en_strs, place_en_strs, personality_zh_strs, personality_en_strs, interest_en_strs, hobby_zh_strs, hobby_en_strs, activities_zh_str, activities_en_str):
+	local = models.Local()
+	local.display_name_en = name
+	local.sex = sex
+	local.email_addr = email
+	local.cell_phone = cell_phone
+	local.save()
+
+	for language_str in language_en_strs:
+		language = models.Language.objects.get(name=language_str)
+		speak_language = models.SpeakLanguage()
+		speak_language.local = local
+		speak_language.language = language
+		speak_language.save()
+
+	for place_str in place_en_strs:
+		place = models.Place.objects.get(name=place_str)
+		go_place = models.GoPlace()
+		go_place.local = local
+		go_place.place = place
+		go_place.save()
+
+	for interest_str in interest_en_strs:
+		interest = models.Interest.objects.get(name_en=interest_str)
+		has_interest = models.HasInterest()
+		has_interest.local = local
+		has_interest.interest = interest
+		has_interest.save()
+
+	for idx in range(len(personality_zh_strs)):
+		personality = models.Personality()
+		personality.name_en = personality_en_strs[idx][:20]
+		personality.name_zh_tw = personality_zh_strs[idx][:19]
+		personality.save()
+		has_personality = models.HasPersonality()
+		has_personality.local = local
+		has_personality.personality = personality
+		has_personality.save()
+
+	for idx in range(len(hobby_zh_strs)):
+		hobby = models.Hobby()
+		hobby.name_en = hobby_en_strs[idx][:20]
+		hobby.name_zh_tw = hobby_zh_strs[idx][:20]
+		hobby.save()
+		has_hobby = models.HasHobby()
+		has_hobby.local = local
+		has_hobby.hobby = hobby
+		has_hobby.save()
+
+	activity = models.Activity()
+	activity.name_en = activities_en_str
+	activity.name_zh_tw = activities_zh_str
+	activity.save()
+	do_activity = models.DoActivity()
+	do_activity.local = local
+	do_activity.activity = activity
+	do_activity.save()
 
