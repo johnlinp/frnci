@@ -20,7 +20,7 @@ class Local(models.Model):
 		speak_languages = SpeakLanguage.objects.filter(local=self)
 		go_places = GoPlace.objects.filter(local=self)
 		has_personalities = HasPersonality.objects.filter(local=self)
-		has_interests = HasInterest.objects.filter(local=self)
+		has_hobbies = HasHobby.objects.filter(local=self)
 		do_activities = DoActivity.objects.filter(local=self)
 
 		return {
@@ -32,7 +32,7 @@ class Local(models.Model):
 			'languages': [item.language for item in speak_languages],
 			'places': [item.place for item in go_places],
 			'personalities': [item.personality for item in has_personalities],
-			'interests': [item.interest for item in has_interests],
+			'hobbies': [item.hobby for item in has_hobbies],
 			'activities': [item.activity for item in do_activities],
 		}
 
