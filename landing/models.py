@@ -1,3 +1,4 @@
+import re
 import hashlib
 from django.utils.translation import ugettext
 from django.db import models
@@ -113,6 +114,29 @@ class Interest(models.Model):
 
 	def __repr__(self):
 		return str(self)
+
+	def to_label(self):
+		name = self.name_en
+		name = re.sub(r' & ', ' ', name)
+		name = re.sub(' ', '-', name)
+		name = name.lower()
+		return name
+
+
+class Hobby(models.Model):
+	name_en = models.CharField(max_length=20)
+	name_zh_tw = models.CharField(max_length=20)
+
+	def __str__(self):
+		return self.name_zh_tw.encode('utf8')
+
+	def __repr__(self):
+		return str(self)
+
+
+class HasHobby(models.Model):
+	local = models.ForeignKey(Local)
+	hobby = models.ForeignKey(Hobby)
 
 
 class HasInterest(models.Model):
