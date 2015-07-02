@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-01 09:53+0800\n"
+"POT-Creation-Date: 2015-07-02 18:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,19 +191,19 @@ msgstr "音樂夢想家"
 msgid "Our Mission"
 msgstr "Our Mission"
 
-#: templates/index.html:302
+#: templates/index.html:303
 msgid "To provide travelers with the experience of authentic beauty"
 msgstr "讓旅人體驗最貼近當地的生活之美"
 
-#: templates/index.html:303
+#: templates/index.html:304
 msgid "To provide locals with the chance to share local culture and spirit"
 msgstr "讓當地人盡情分享道地生活與文化"
 
-#: templates/index.html:304
+#: templates/index.html:305
 msgid "To connect travelers and locals in a more genuine, and deeper way"
 msgstr "連結旅人與當地人，深度交流不再是難事"
 
-#: templates/index.html:314
+#: templates/index.html:316
 msgid "Sign up to become a test pilot"
 msgstr "平台正式上線後，我們會馬上通知你!"
 
@@ -240,13 +240,17 @@ msgid "Request to Meet"
 msgstr "我想媒合"
 
 #: templates/makemessages.html:1
-msgid "Chinese"
-msgstr "中文"
-
-#: templates/makemessages.html:2
 msgid "Taiwanese"
 msgstr "台語"
 
-#: templates/makemessages.html:3
+#: templates/makemessages.html:2
 msgid "Cantonese"
 msgstr "廣東話"
+
+#: templates/makemessages.html:3
+msgid "Mandarin"
+msgstr "中文"
+
+#: templates/makemessages.html:4
+msgid "Hakka"
+msgstr "客語"
