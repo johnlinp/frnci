@@ -1,6 +1,7 @@
 import re
 import hashlib
 from django.utils.translation import ugettext
+from django.utils.translation import get_language
 from django.db import models
 
 
@@ -94,7 +95,9 @@ class Personality(models.Model):
 	name_zh_tw = models.CharField(max_length=20)
 
 	def __str__(self):
-		return self.name_zh_tw.encode('utf8')
+		if get_language() == 'zh-tw':
+			return self.name_zh_tw.encode('utf8')
+		return self.name_en.encode('utf8')
 
 	def __repr__(self):
 		return str(self)
@@ -110,7 +113,9 @@ class Interest(models.Model):
 	name_zh_tw = models.CharField(max_length=20)
 
 	def __str__(self):
-		return self.name_zh_tw.encode('utf8')
+		if get_language() == 'zh-tw':
+			return self.name_zh_tw.encode('utf8')
+		return self.name_en.encode('utf8')
 
 	def __repr__(self):
 		return str(self)
@@ -128,7 +133,9 @@ class Hobby(models.Model):
 	name_zh_tw = models.CharField(max_length=20)
 
 	def __str__(self):
-		return self.name_zh_tw.encode('utf8')
+		if get_language() == 'zh-tw':
+			return self.name_zh_tw.encode('utf8')
+		return self.name_en.encode('utf8')
 
 	def __repr__(self):
 		return str(self)
@@ -149,7 +156,9 @@ class Activity(models.Model):
 	name_zh_tw = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.name_zh_tw.encode('utf8')
+		if get_language() == 'zh-tw':
+			return self.name_zh_tw.encode('utf8')
+		return self.name_en.encode('utf8')
 
 	def __repr__(self):
 		return str(self)
