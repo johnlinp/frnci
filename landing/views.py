@@ -56,24 +56,17 @@ def locals_interest(request, interest_str):
 	locals_info = []
 	context['locals'] = locals_info
 
-	interest_str_list = [
-		'art-design',
-		'film-music',
-		'food-drink',
-		'local-culture',
-		'nature-outdoors',
-		'sports-adventure',
-	]
-
 	show_full = request.user.is_authenticated()
 
+	interest = models.Interest.objects.get_by_label(interest_str)
 	locals_ = models.Local.objects.all()
 
-	num_per_page = math.ceil(locals_.count() / 6.0)
-	paginator = Paginator(locals_, num_per_page)
-	index = interest_str_list.index(interest_str) + 1
-
-	for local in paginator.page(index):
+	locals_ = models.Local.objects.all()
+	for local in locals_:
+		has_interests = models.HasInterest.objects.filter(local=local)
+		interests = [has_interest.interest for has_interest in has_interests]
+		if interest not in interests:
+			continue
 		local_info = local.to_info()
 		locals_info.append(local_info)
 

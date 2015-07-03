@@ -2,6 +2,7 @@ import re
 import hashlib
 from django.utils.translation import ugettext
 from django.utils.translation import get_language
+from  django.core.exceptions import MultipleObjectsReturned
 from django.db import models
 
 
@@ -108,9 +109,18 @@ class HasPersonality(models.Model):
 	personality = models.ForeignKey(Personality)
 
 
+class InterestManager(models.Manager):
+	def get_by_label(self, label):
+		selected = [interest for interest in self.all() if interest.to_label() == label]
+		if len(selected) > 1:
+			raise MultipleObjectsReturned()
+		return selected[0]
+
+
 class Interest(models.Model):
 	name_en = models.CharField(max_length=20)
 	name_zh_tw = models.CharField(max_length=20)
+	objects = InterestManager()
 
 	def __str__(self):
 		if get_language() == 'zh-tw':
@@ -173,4 +183,3 @@ class Pilot(models.Model):
 	email = models.EmailField()
 	ip = models.CharField(max_length=20)
 	timestamp = models.DateTimeField(auto_now=True)
-
