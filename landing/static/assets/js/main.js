@@ -122,10 +122,10 @@
 				$.get('/pilot/', {email: $pilotEmail.val()}, function(result) {
 					console.log(result);
 					if (result.success) {
-						$pilotSubmit.val('Okay!');
+						$pilotSubmit.val($pilotSubmit.attr('data-success-msg'));
 						$pilotSubmit.removeClass().addClass('okay');
 					} else {
-						$pilotSubmit.val('Check Again!');
+						$pilotSubmit.val($pilotSubmit.attr('data-error-msg'));
 						$pilotSubmit.removeClass().addClass('danger');
 					}
 				}, 'json');

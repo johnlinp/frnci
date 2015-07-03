@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-02 18:32+0800\n"
+"POT-Creation-Date: 2015-07-03 13:18+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -189,7 +189,7 @@ msgstr "音樂夢想家"
 
 #: templates/index.html:299
 msgid "Our Mission"
-msgstr "Our Mission"
+msgstr "使命"
 
 #: templates/index.html:303
 msgid "To provide travelers with the experience of authentic beauty"
@@ -206,6 +206,18 @@ msgstr "連結旅人與當地人，深度交流不再是難事"
 #: templates/index.html:316
 msgid "Sign up to become a test pilot"
 msgstr "平台正式上線後，我們會馬上通知你!"
+
+#: templates/index.html:323
+msgid "Submit!"
+msgstr "送出!"
+
+#: templates/index.html:323
+msgid "Check Again!"
+msgstr "再檢查一下"
+
+#: templates/index.html:323
+msgid "Okay!"
+msgstr "完成!"
 
 #: templates/locals.html:37
 msgid "Find Your Local Friends"
@@ -238,6 +250,18 @@ msgstr "https://pin4.typeform.com/to/HY8oAJ"
 #: templates/locals.html:109
 msgid "Request to Meet"
 msgstr "我想媒合"
+
+#: templates/locals.html:121
+msgid "Want to see more locals?"
+msgstr "想要看更多的當地人嗎？"
+
+#: templates/locals.html:123
+msgid "Sign in with"
+msgstr "登入"
+
+#: templates/locals.html:123
+msgid "to see more"
+msgstr "來看完整列表"
 
 #: templates/makemessages.html:1
 msgid "Taiwanese"
