@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-03 13:18+0800\n"
+"POT-Creation-Date: 2015-07-04 11:44+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,11 @@ msgstr "登入"
 msgid "About Us"
 msgstr "關於我們"
 
-#: templates/index.html:44 templates/locals.html:27
+#: templates/index.html:44 templates/locals.html:47
 msgid "https://pin4.typeform.com/to/OS3BNX"
 msgstr "https://pin4.typeform.com/to/OS3BNX"
 
-#: templates/index.html:44 templates/locals.html:27
+#: templates/index.html:44 templates/locals.html:47
 msgid "Register to be Local"
 msgstr "我想帶路"
 
@@ -95,19 +95,19 @@ msgstr "當地人與旅人實體交流"
 msgid "Where are you going?"
 msgstr "你想去哪裡旅行呢？"
 
-#: templates/index.html:129
+#: templates/index.html:129 templates/locals.html:30
 msgid "East"
 msgstr "東部"
 
-#: templates/index.html:136
+#: templates/index.html:136 templates/locals.html:31
 msgid "South"
 msgstr "南部"
 
-#: templates/index.html:145
+#: templates/index.html:145 templates/locals.html:32
 msgid "North"
 msgstr "北部"
 
-#: templates/index.html:152
+#: templates/index.html:152 templates/locals.html:33
 msgid "West"
 msgstr "西部"
 
@@ -115,27 +115,27 @@ msgstr "西部"
 msgid "What interests you?"
 msgstr "你對什麼感興趣呢？"
 
-#: templates/index.html:170
+#: templates/index.html:170 templates/locals.html:39
 msgid "Local Culture"
 msgstr "在地文化"
 
-#: templates/index.html:177
+#: templates/index.html:177 templates/locals.html:40
 msgid "Art &amp; Design"
 msgstr "藝術/設計"
 
-#: templates/index.html:184
+#: templates/index.html:184 templates/locals.html:41
 msgid "Nature &amp; Outdoors"
 msgstr "大自然/戶外"
 
-#: templates/index.html:193
+#: templates/index.html:193 templates/locals.html:42
 msgid "Sports &amp; Adventure"
 msgstr "運動/冒險"
 
-#: templates/index.html:200
+#: templates/index.html:200 templates/locals.html:43
 msgid "Food &amp; Drink"
 msgstr "美食"
 
-#: templates/index.html:207
+#: templates/index.html:207 templates/locals.html:44
 msgid "Film &amp; Music"
 msgstr "電影/音樂"
 
@@ -219,47 +219,55 @@ msgstr "再檢查一下"
 msgid "Okay!"
 msgstr "完成!"
 
+#: templates/locals.html:28
+msgid "By Area"
+msgstr "按照地區"
+
 #: templates/locals.html:37
+msgid "By Interest"
+msgstr "按照興趣"
+
+#: templates/locals.html:57
 msgid "Find Your Local Friends"
 msgstr "尋找當地的朋友"
 
-#: templates/locals.html:38
+#: templates/locals.html:58
 msgid "to explore local spirit and connect to local community"
 msgstr "體驗當地的人情味 感受與當地的連結"
 
-#: templates/locals.html:67
+#: templates/locals.html:87
 msgid "I speak..."
 msgstr "我會講…"
 
-#: templates/locals.html:73
+#: templates/locals.html:93
 msgid "I am..."
 msgstr "我的個性…"
 
-#: templates/locals.html:79
+#: templates/locals.html:99
 msgid "I like..."
 msgstr "我喜歡…"
 
-#: templates/locals.html:96
+#: templates/locals.html:116
 msgid "What I like to share with travelers..."
 msgstr "我想要和旅人…"
 
-#: templates/locals.html:109
+#: templates/locals.html:129
 msgid "https://pin4.typeform.com/to/gauKQF"
 msgstr "https://pin4.typeform.com/to/HY8oAJ"
 
-#: templates/locals.html:109
+#: templates/locals.html:129
 msgid "Request to Meet"
 msgstr "我想媒合"
 
-#: templates/locals.html:121
+#: templates/locals.html:141
 msgid "Want to see more locals?"
 msgstr "想要看更多的當地人嗎？"
 
-#: templates/locals.html:123
+#: templates/locals.html:143
 msgid "Sign in with"
 msgstr "登入"
 
-#: templates/locals.html:123
+#: templates/locals.html:143
 msgid "to see more"
 msgstr "來看完整列表"
 
