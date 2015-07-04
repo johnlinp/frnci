@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-04 11:44+0800\n"
+"POT-Creation-Date: 2015-07-04 12:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "登出"
 msgid "Sign In"
 msgstr "登入"
 
-#: templates/index.html:43 templates/index.html.py:287
+#: templates/index.html:43 templates/index.html.py:294
 msgid "About Us"
 msgstr "關於我們"
 
@@ -92,130 +92,138 @@ msgid ""
 msgstr "當地人與旅人實體交流"
 
 #: templates/index.html:122
+msgid "Why FRNCi?"
+msgstr "為什麼要用 FRNCi ？"
+
+#: templates/index.html:125
+msgid "If you are a traveler..."
+msgstr "【如果你是這樣的旅人】"
+
+#: templates/index.html:128
+msgid "Want to know more about the special events &amp; hidden spots"
+msgstr "想探索私房景點或探索當地文化的你"
+
+#: templates/index.html:129
+msgid "Want to meet locals in a deeper way"
+msgstr "想和興趣相似的新朋友深度交流的你"
+
+#: templates/index.html:132
+msgid "If you are a local..."
+msgstr "【如果你是這樣的當地人】"
+
+#: templates/index.html:135
+msgid "Want to make foreign friends and learn new language"
+msgstr "想認識世界各地不同文化的朋友的你"
+
+#: templates/index.html:136
+msgid "Want to share more about your lovely culture and daily life"
+msgstr "想分享更多你的文化和生活體驗的你"
+
+#: templates/index.html:139
+msgid "Let's redefine \"Travel\"!"
+msgstr "歡迎你和我們一起重新定義「旅行」！"
+
+#: templates/index.html:140
+msgid "Find Locals Below"
+msgstr "往下尋找當地朋友"
+
+#: templates/index.html:147
 msgid "Where are you going?"
 msgstr "你想去哪裡旅行呢？"
 
-#: templates/index.html:129 templates/locals.html:30
+#: templates/index.html:154 templates/locals.html:30
 msgid "East"
 msgstr "東部"
 
-#: templates/index.html:136 templates/locals.html:31
+#: templates/index.html:161 templates/locals.html:31
 msgid "South"
 msgstr "南部"
 
-#: templates/index.html:145 templates/locals.html:32
+#: templates/index.html:170 templates/locals.html:32
 msgid "North"
 msgstr "北部"
 
-#: templates/index.html:152 templates/locals.html:33
+#: templates/index.html:177 templates/locals.html:33
 msgid "West"
 msgstr "西部"
 
-#: templates/index.html:163
+#: templates/index.html:188
 msgid "What interests you?"
 msgstr "你對什麼感興趣呢？"
 
-#: templates/index.html:170 templates/locals.html:39
+#: templates/index.html:195 templates/locals.html:39
 msgid "Local Culture"
 msgstr "在地文化"
 
-#: templates/index.html:177 templates/locals.html:40
+#: templates/index.html:202 templates/locals.html:40
 msgid "Art &amp; Design"
 msgstr "藝術/設計"
 
-#: templates/index.html:184 templates/locals.html:41
+#: templates/index.html:209 templates/locals.html:41
 msgid "Nature &amp; Outdoors"
 msgstr "大自然/戶外"
 
-#: templates/index.html:193 templates/locals.html:42
+#: templates/index.html:218 templates/locals.html:42
 msgid "Sports &amp; Adventure"
 msgstr "運動/冒險"
 
-#: templates/index.html:200 templates/locals.html:43
+#: templates/index.html:225 templates/locals.html:43
 msgid "Food &amp; Drink"
 msgstr "美食"
 
-#: templates/index.html:207 templates/locals.html:44
+#: templates/index.html:232 templates/locals.html:44
 msgid "Film &amp; Music"
 msgstr "電影/音樂"
 
-#: templates/index.html:218
-msgid "Why FRNCI?"
-msgstr "為什麼要用 FRNCI ？"
-
-#: templates/index.html:221
-msgid "If you are a traveler..."
-msgstr "【關於旅人】"
-
-#: templates/index.html:223
-msgid "Want to know more about the special events &amp; hidden spots"
-msgstr "給想要了解更多私房景點或探索當地文化的你"
-
-#: templates/index.html:224
-msgid "Want to meet locals in a deeper way"
-msgstr "給想要深度交流興趣相似的新朋友的你"
-
-#: templates/index.html:226
-msgid "If you are a local..."
-msgstr "【關於當地人】"
-
-#: templates/index.html:228
-msgid "Want to make foreign friends and learn new language"
-msgstr "想認識不同文化背景的外國朋友的你"
-
-#: templates/index.html:229
-msgid "Want to share more about your lovely culture and daily life"
-msgstr "給想分享更多你自己的文化與生活體驗的你"
-
-#: templates/index.html:291
+#: templates/index.html:298
 msgid "Crazy Backpacker"
 msgstr "瘋狂背包客"
 
-#: templates/index.html:292
+#: templates/index.html:299
 msgid "Cultural Enthusiast"
 msgstr "國際文創人"
 
-#: templates/index.html:293
+#: templates/index.html:300
 msgid "Delicacy Blogger"
 msgstr "美食部落客"
 
-#: templates/index.html:294
+#: templates/index.html:301
 msgid "Passionate Tour Guide"
 msgstr "領隊導遊哥"
 
-#: templates/index.html:295
+#: templates/index.html:302
 msgid "Easy Going Musician"
 msgstr "音樂夢想家"
 
-#: templates/index.html:299
+#: templates/index.html:306
 msgid "Our Mission"
 msgstr "使命"
 
-#: templates/index.html:303
+#: templates/index.html:310
 msgid "To provide travelers with the experience of authentic beauty"
 msgstr "讓旅人體驗最貼近當地的生活之美"
 
-#: templates/index.html:304
+#: templates/index.html:311
 msgid "To provide locals with the chance to share local culture and spirit"
 msgstr "讓當地人盡情分享道地生活與文化"
 
-#: templates/index.html:305
+#: templates/index.html:312
 msgid "To connect travelers and locals in a more genuine, and deeper way"
 msgstr "連結旅人與當地人，深度交流不再是難事"
 
-#: templates/index.html:316
+#: templates/index.html:323
 msgid "Sign up to become a test pilot"
 msgstr "平台正式上線後，我們會馬上通知你!"
 
-#: templates/index.html:323
+#: templates/index.html:330
 msgid "Submit!"
 msgstr "送出!"
 
-#: templates/index.html:323
+#: templates/index.html:330
 msgid "Check Again!"
 msgstr "再檢查一下"
 
-#: templates/index.html:323
+#: templates/index.html:330
 msgid "Okay!"
 msgstr "完成!"
 

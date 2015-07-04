@@ -7,7 +7,7 @@
 -->
 <html>
 	<head>
-		<title>FRNCI | Find Locals, Travel for Real.</title>
+		<title>FRNCi | Find Locals, Travel for Real.</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
@@ -116,7 +116,32 @@
 							</div>
 						</section>
 
-						<section class="wrapper style3 container special">
+						<section class="wrapper style2 container">
+
+							<header class="major">
+								<h2>{% trans "Why FRNCi?" %}</h2>
+							</header>
+
+							<p><strong>{% trans "If you are a traveler..." %}</strong></p>
+
+							<p>
+								{% trans "Want to know more about the special events &amp; hidden spots" %}<br>
+								{% trans "Want to meet locals in a deeper way" %}
+							</p>
+
+							<p><strong>{% trans "If you are a local..." %}</strong></p>
+
+							<p>
+								{% trans "Want to make foreign friends and learn new language" %}<br>
+								{% trans "Want to share more about your lovely culture and daily life" %}
+							</p>
+
+							<p class="top-blank"><h2>{% blocktrans %}Let's redefine "Travel"!{% endblocktrans %}</h2></p>
+							<p><a href="#by-area" class="button special scrolly">{% trans "Find Locals Below" %}</a></p>
+
+						</section>
+
+						<section id="by-area" class="wrapper style3 container special">
 
 							<header class="major">
 								<h2>{% trans "Where are you going?" %}</h2>
@@ -209,24 +234,6 @@
 
 								</div>
 							</div>
-
-						</section>
-
-						<section class="wrapper style2 container">
-
-							<header class="major">
-								<h2>{% trans "Why FRNCI?" %}</h2>
-							</header>
-
-							<p><strong>{% trans "If you are a traveler..." %}</strong></p>
-
-							<p>{% trans "Want to know more about the special events &amp; hidden spots" %}<br>
-							{% trans "Want to meet locals in a deeper way" %}</p>
-
-							<p><strong>{% trans "If you are a local..." %}</strong></p>
-
-							<p>{% trans "Want to make foreign friends and learn new language" %}<br>
-							{% trans "Want to share more about your lovely culture and daily life" %}</p>
 
 						</section>
 
@@ -336,7 +343,7 @@
 					</ul>
 
 					<ul class="copyright">
-						<li>&copy; FRNCI</li>
+						<li>&copy; FRNCi</li>
 					</ul>
 
 				</footer>
