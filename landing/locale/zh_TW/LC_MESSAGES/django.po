@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-04 12:16+0800\n"
+"POT-Creation-Date: 2015-07-05 02:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,11 +100,11 @@ msgid "If you are a traveler..."
 msgstr "【如果你是這樣的旅人】"
 
 #: templates/index.html:128
-msgid "Want to know more about the special events &amp; hidden spots"
+msgid "wanting to explore hidden spots and local spirit"
 msgstr "想探索私房景點或探索當地文化的你"
 
 #: templates/index.html:129
-msgid "Want to meet locals in a deeper way"
+msgid "wanting to meet locals with similar interest"
 msgstr "想和興趣相似的新朋友深度交流的你"
 
 #: templates/index.html:132
@@ -112,20 +112,20 @@ msgid "If you are a local..."
 msgstr "【如果你是這樣的當地人】"
 
 #: templates/index.html:135
-msgid "Want to make foreign friends and learn new language"
+msgid "wanting to make friends from all over the world"
 msgstr "想認識世界各地不同文化的朋友的你"
 
 #: templates/index.html:136
-msgid "Want to share more about your lovely culture and daily life"
+msgid "wanting to share local culture and your daily life"
 msgstr "想分享更多你的文化和生活體驗的你"
 
 #: templates/index.html:139
-msgid "Let's redefine \"Travel\"!"
-msgstr "歡迎你和我們一起重新定義「旅行」！"
+msgid "Redefine your journey with us!"
+msgstr "往下尋找當地朋友"
 
 #: templates/index.html:140
-msgid "Find Locals Below"
-msgstr "往下尋找當地朋友"
+msgid "Look for local friends"
+msgstr "尋找當地的朋友"
 
 #: templates/index.html:147
 msgid "Where are you going?"
@@ -294,3 +294,15 @@ msgstr "中文"
 #: templates/makemessages.html:4
 msgid "Hakka"
 msgstr "客語"
+
+#~ msgid "Want to know more about the special events &amp; hidden spots"
+#~ msgstr "想探索私房景點或探索當地文化的你"
+
+#~ msgid "Want to make foreign friends and learn new language"
+#~ msgstr "想認識世界各地不同文化的朋友的你"
+
+#~ msgid "Let's redefine \"Travel\"!"
+#~ msgstr "歡迎你和我們一起重新定義「旅行」！"
+
+#~ msgid "Find Locals Below"
+#~ msgstr "往下尋找當地朋友"
