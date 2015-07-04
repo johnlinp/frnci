@@ -24,6 +24,26 @@
 					<h1 id="logo"><a href="{% url 'home' %}"><img class="logo" src="/static/images/materials/logo-orange.png"></img></a></h1>
 					<nav id="nav">
 						<ul>
+							<li class="submenu">
+								<a href="#">{% trans "By Area" %}</a>
+								<ul>
+									<li><a href="/locals/area/eastern/">{% trans "East" %}</a></li>
+									<li><a href="/locals/area/southern/">{% trans "South" %}</a></li>
+									<li><a href="/locals/area/northern/">{% trans "North" %}</a></li>
+									<li><a href="/locals/area/western/">{% trans "West" %}</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#">{% trans "By Interest" %}</a>
+								<ul>
+									<li><a href="/locals/interest/local-culture/">{% trans "Local Culture" %}</a></li>
+									<li><a href="/locals/interest/art-design/">{% trans "Art &amp; Design" %}</a></li>
+									<li><a href="/locals/interest/nature-outdoors/">{% trans "Nature &amp; Outdoors" %}</a></li>
+									<li><a href="/locals/interest/sports-adventure/">{% trans "Sports &amp; Adventure" %}</a></li>
+									<li><a href="/locals/interest/food-drink/">{% trans "Food &amp; Drink" %}</a></li>
+									<li><a href="/locals/interest/film-music/">{% trans "Film &amp; Music" %}</a></li>
+								</ul>
+							</li>
 							<li><a href="{% trans "https://pin4.typeform.com/to/OS3BNX" %}" class="button special">{% trans "Register to be Local" %}</a></li>
 						</ul>
 					</nav>
