@@ -80,7 +80,7 @@ class Place(models.Model):
 	area = models.ForeignKey(Area)
 
 	def __str__(self):
-		return self.name.encode('utf8')
+		return ugettext(self.name).encode('utf8')
 
 	def __repr__(self):
 		return str(self)

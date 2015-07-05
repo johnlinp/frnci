@@ -3285,6 +3285,10 @@
 		min-height: 8em;
 	}
 
+	.local-places-block {
+		min-height: 12em;
+	}
+
 	.local-meet-block {
 		min-height: 12em;
 	}

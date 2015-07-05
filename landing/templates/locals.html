@@ -65,61 +65,69 @@
 
 									<div class="row">
 
-					{% for local in locals %}
-										<div class="4u 12u(narrower)">
+										{% for local in locals %}
+											<div class="4u 12u(narrower)">
 
-											<section class="local-image-block">
+												<section class="local-image-block">
 
-												<div class="12u">
-													<img src="/static/images/locals/{{ local.email_hash }}" alt="Local Image" onError="this.onerror=null;this.src='/static/images/materials/no-such-person.png';" />
-													<h2>{{ local.name }}</h2>
-												</div>
-
-											</section>
-
-											<section class="local-info-block">
-
-												<div class="row">
-
-													<div class="4u">
-														<div class="capital bright">{% trans "I speak..." %}</div><br>
-														{% for language in local.languages %}
-															<div>{{ language }}</div>
-														{% endfor %}
-													</div>
-													<div class="4u">
-														<div class="capital bright">{% trans "I am..." %}</div><br>
-														{% for personality in local.personalities %}
-															<div>{{ personality }}</div>
-														{% endfor %}
-													</div>
-													<div class="4u">
-														<div class="capital bright">{% trans "I like..." %}</div><br>
-														{% for hobby in local.hobbies %}
-															<div>{{ hobby }}</div>
-														{% endfor %}
+													<div class="12u">
+														<img src="/static/images/locals/{{ local.email_hash }}" alt="Local Image" onError="this.onerror=null;this.src='/static/images/materials/no-such-person.png';" />
+														<h2>{{ local.name }}</h2>
 													</div>
 
-												</div>
+												</section>
 
-											</section>
+												<section class="local-info-block">
 
-											<section class="local-activities-block">
-												<p><h3 class="bright">{% trans "What I like to share with travelers..." %}</h3></p>
-												<p>
-													{% for activity in local.activities %}
-														{{ activity }}<br>
-													{% endfor %}
-												</p>
-											</section>
+													<div class="row">
 
+														<div class="4u">
+															<div class="capital bright">{% trans "I speak..." %}</div><br>
+															{% for language in local.languages %}
+																<div>{{ language }}</div>
+															{% endfor %}
+														</div>
+														<div class="4u">
+															<div class="capital bright">{% trans "I am..." %}</div><br>
+															{% for personality in local.personalities %}
+																<div>{{ personality }}</div>
+															{% endfor %}
+														</div>
+														<div class="4u">
+															<div class="capital bright">{% trans "I like..." %}</div><br>
+															{% for hobby in local.hobbies %}
+																<div>{{ hobby }}</div>
+															{% endfor %}
+														</div>
 
-											<section class="local-meet-block">
-												<a class="button special" href="{% trans "https://pin4.typeform.com/to/gauKQF" %}?local={{ local.email_hash }}">{% trans "Request to Meet" %}</a>
-											</section>
+													</div>
 
-										</div>
-					{% endfor %}
+												</section>
+
+												<section class="local-activities-block">
+													<p><h3 class="bright">{% trans "What I like to share with travelers..." %}</h3></p>
+													<p>
+														{% for activity in local.activities %}
+															{{ activity }}<br>
+														{% endfor %}
+													</p>
+												</section>
+
+												<section class="local-places-block">
+													<p><h3 class="bright">{% trans "Where we could meet..." %}</h3></p>
+													<p>
+														{% for place in local.places %}
+															{{ place }}
+														{% endfor %}
+													</p>
+												</section>
+
+												<section class="local-meet-block">
+													<a class="button special" href="{% trans "https://pin4.typeform.com/to/gauKQF" %}?local={{ local.email_hash }}">{% trans "Request to Meet" %}</a>
+												</section>
+
+											</div>
+										{% endfor %}
 
 									</div>
 

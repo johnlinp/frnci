@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-05 02:10+0800\n"
+"POT-Creation-Date: 2015-07-05 13:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,11 +121,11 @@ msgstr "想分享更多你的文化和生活體驗的你"
 
 #: templates/index.html:139
 msgid "Redefine your journey with us!"
-msgstr "往下尋找當地朋友"
+msgstr "歡迎你和我們一起重新定義「旅行」！"
 
 #: templates/index.html:140
 msgid "Look for local friends"
-msgstr "尋找當地的朋友"
+msgstr "往下尋找當地朋友"
 
 #: templates/index.html:147
 msgid "Where are you going?"
@@ -243,39 +243,43 @@ msgstr "尋找當地的朋友"
 msgid "to explore local spirit and connect to local community"
 msgstr "體驗當地的人情味 感受與當地的連結"
 
-#: templates/locals.html:87
+#: templates/locals.html:85
 msgid "I speak..."
 msgstr "我會講…"
 
-#: templates/locals.html:93
+#: templates/locals.html:91
 msgid "I am..."
 msgstr "我的個性…"
 
-#: templates/locals.html:99
+#: templates/locals.html:97
 msgid "I like..."
 msgstr "我喜歡…"
 
-#: templates/locals.html:116
+#: templates/locals.html:108
 msgid "What I like to share with travelers..."
 msgstr "我想要和旅人…"
 
-#: templates/locals.html:129
+#: templates/locals.html:117
+msgid "Where we could meet..."
+msgstr "可以一起去…"
+
+#: templates/locals.html:126
 msgid "https://pin4.typeform.com/to/gauKQF"
 msgstr "https://pin4.typeform.com/to/HY8oAJ"
 
-#: templates/locals.html:129
+#: templates/locals.html:126
 msgid "Request to Meet"
 msgstr "我想媒合"
 
-#: templates/locals.html:141
+#: templates/locals.html:140
 msgid "Want to see more locals?"
 msgstr "想要看更多的當地人嗎？"
 
-#: templates/locals.html:143
+#: templates/locals.html:142
 msgid "Sign in with"
 msgstr "登入"
 
-#: templates/locals.html:143
+#: templates/locals.html:142
 msgid "to see more"
 msgstr "來看完整列表"
 
@@ -295,14 +299,66 @@ msgstr "中文"
 msgid "Hakka"
 msgstr "客語"
 
-#~ msgid "Want to know more about the special events &amp; hidden spots"
-#~ msgstr "想探索私房景點或探索當地文化的你"
+#: templates/makemessages.html:5
+msgid "Taoyuan"
+msgstr "桃園"
 
-#~ msgid "Want to make foreign friends and learn new language"
-#~ msgstr "想認識世界各地不同文化的朋友的你"
+#: templates/makemessages.html:6
+msgid "Hsinchu"
+msgstr "新竹"
 
-#~ msgid "Let's redefine \"Travel\"!"
-#~ msgstr "歡迎你和我們一起重新定義「旅行」！"
+#: templates/makemessages.html:7
+msgid "Miaoli"
+msgstr "苗栗"
 
-#~ msgid "Find Locals Below"
-#~ msgstr "往下尋找當地朋友"
+#: templates/makemessages.html:8
+msgid "Chiayi"
+msgstr "嘉義"
+
+#: templates/makemessages.html:9
+msgid "Tainan"
+msgstr "臺南"
+
+#: templates/makemessages.html:10
+msgid "Nantou"
+msgstr "南投"
+
+#: templates/makemessages.html:11
+msgid "Kaohsiung"
+msgstr "高雄"
+
+#: templates/makemessages.html:12
+msgid "Taipei"
+msgstr "臺北"
+
+#: templates/makemessages.html:13
+msgid "Pingtung"
+msgstr "屏東"
+
+#: templates/makemessages.html:14
+msgid "Taitung"
+msgstr "臺東"
+
+#: templates/makemessages.html:15
+msgid "Hualien"
+msgstr "花蓮"
+
+#: templates/makemessages.html:16
+msgid "Yilan"
+msgstr "宜蘭"
+
+#: templates/makemessages.html:17
+msgid "Outlying Islands"
+msgstr "離島"
+
+#: templates/makemessages.html:18
+msgid "Yunlin"
+msgstr "雲林"
+
+#: templates/makemessages.html:19
+msgid "Taichung"
+msgstr "臺中"
+
+#: templates/makemessages.html:20
+msgid "Changhua"
+msgstr "彰化"
