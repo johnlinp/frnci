@@ -58,47 +58,45 @@
 						<p>{% trans "to explore local spirit and connect to local community" %}</p>
 					</header>
 
-					{% for local in locals %}
 						<section class="wrapper style4 special">
 
 							<!-- Content -->
-								<div class="content container wrapper">
+								<div class="content container 12u">
 
 									<div class="row">
 
-										<div class="6u 12u(narrower)">
+					{% for local in locals %}
+										<div class="4u 12u(narrower)">
 
-											<section>
+											<section class="local-image-block">
 
-												<img class="local-image" src="/static/images/locals/{{ local.email_hash }}" alt="local-image" onError="this.onerror=null;this.src='/static/images/materials/no-such-person.png';" />
-												<h2>{{ local.name }}</h2>
+												<div class="12u">
+													<img src="/static/images/locals/{{ local.email_hash }}" alt="Local Image" onError="this.onerror=null;this.src='/static/images/materials/no-such-person.png';" />
+													<h2>{{ local.name }}</h2>
+												</div>
 
 											</section>
 
-										</div>
+											<section class="local-info-block">
 
-										<div class="6u 12u(narrower)">
+												<div class="row">
 
-											<section>
-
-												<div class="row left">
-
-													<div class="12u">
-														<span class="capital bright">{% trans "I speak..." %}</span><br>
+													<div class="4u">
+														<div class="capital bright">{% trans "I speak..." %}</div><br>
 														{% for language in local.languages %}
-															{{ language }}
+															<div>{{ language }}</div>
 														{% endfor %}
 													</div>
-													<div class="12u">
-														<span class="capital bright">{% trans "I am..." %}</span><br>
+													<div class="4u">
+														<div class="capital bright">{% trans "I am..." %}</div><br>
 														{% for personality in local.personalities %}
-															{{ personality }}
+															<div>{{ personality }}</div>
 														{% endfor %}
 													</div>
-													<div class="12u">
-														<span class="capital bright">{% trans "I like..." %}</span><br>
+													<div class="4u">
+														<div class="capital bright">{% trans "I like..." %}</div><br>
 														{% for hobby in local.hobbies %}
-															{{ hobby }}
+															<div>{{ hobby }}</div>
 														{% endfor %}
 													</div>
 
@@ -106,35 +104,28 @@
 
 											</section>
 
+											<section class="local-activities-block">
+												<p><h3 class="bright">{% trans "What I like to share with travelers..." %}</h3></p>
+												<p>
+													{% for activity in local.activities %}
+														{{ activity }}<br>
+													{% endfor %}
+												</p>
+											</section>
+
+
+											<section class="local-meet-block">
+												<a class="button special" href="{% trans "https://pin4.typeform.com/to/gauKQF" %}?local={{ local.email_hash }}">{% trans "Request to Meet" %}</a>
+											</section>
+
 										</div>
-
-									</div>
-
-									<div class="row">
-
-										<div class="12u 12u(narrower)">
-											<p><h3 class="bright">{% trans "What I like to share with travelers..." %}</h3></p>
-											<p>
-												{% for activity in local.activities %}
-													{{ activity }}<br>
-												{% endfor %}
-											</p>
-										</div>
-
-									</div>
-
-									<div class="row">
-
-										<div class="12u 12u(narrower)">
-											<a class="button special" href="{% trans "https://pin4.typeform.com/to/gauKQF" %}?local={{ local.email_hash }}">{% trans "Request to Meet" %}</a>
-										</div>
+					{% endfor %}
 
 									</div>
 
 								</div>
 
 						</section>
-					{% endfor %}
 
 					{% if not user.is_authenticated %}
 						<section class="special container">

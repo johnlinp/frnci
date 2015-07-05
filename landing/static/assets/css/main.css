@@ -3011,10 +3011,6 @@
 				letter-spacing: 0.025em;
 			}
 
-			p {
-				text-align: justify;
-			}
-
 		/* Section/Article */
 
 			header {
@@ -3267,8 +3263,30 @@
 		color: #2ecc71 !important;
 	}
 
-	.local-image {
+	.local-image-block {
+		min-height: 20em;
+		position: relative;
+	}
+
+	.local-image-block div {
+		position: absolute;
+		bottom: 0;
+	}
+
+	.local-image-block div img {
 		max-width: 12em;
+	}
+
+	.local-info-block {
+		min-height: 14em;
+	}
+
+	.local-activities-block {
+		min-height: 8em;
+	}
+
+	.local-meet-block {
+		min-height: 12em;
 	}
 
 	.top-blank {
