@@ -110,19 +110,19 @@ def locals_import(request):
 
 		name = main_row[1]
 		sex = 'F'
-		email = main_row[28]
-		cell_phone = main_row[29]
+		email = main_row[29]
+		cell_phone = main_row[30]
 
-		place_en_strs       = [place_en_str       for place_en_str       in en_row[3:7]     if place_en_str]
-		interest_en_strs    = [interest_en_str    for interest_en_str    in en_row[7:11]    if interest_en_str]
-		language_en_strs    = [language_en_str    for language_en_str    in en_row[11:15]   if language_en_str]
-		personality_zh_strs = [personality_zh_str for personality_zh_str in main_row[15:19] if personality_zh_str]
-		personality_en_strs = [personality_en_str for personality_en_str in en_row[15:19]   if personality_en_str]
-		hobby_zh_strs       = [hobby_zh_str       for hobby_zh_str       in main_row[19:23] if hobby_zh_str]
-		hobby_en_strs       = [hobby_en_str       for hobby_en_str       in en_row[19:23]   if hobby_en_str]
+		place_en_strs       = [place_en_str       for place_en_str       in en_row[4:8]     if place_en_str]
+		interest_en_strs    = [interest_en_str    for interest_en_str    in en_row[8:12]    if interest_en_str]
+		language_en_strs    = [language_en_str    for language_en_str    in en_row[12:16]   if language_en_str]
+		personality_zh_strs = [personality_zh_str for personality_zh_str in main_row[16:20] if personality_zh_str]
+		personality_en_strs = [personality_en_str for personality_en_str in en_row[16:20]   if personality_en_str]
+		hobby_zh_strs       = [hobby_zh_str       for hobby_zh_str       in main_row[20:24] if hobby_zh_str]
+		hobby_en_strs       = [hobby_en_str       for hobby_en_str       in en_row[20:24]   if hobby_en_str]
 
-		activities_zh_str = main_row[23]
-		activities_en_str = en_row[23]
+		activities_zh_str = main_row[24]
+		activities_en_str = en_row[24]
 
 		places_en_str = ' '.join(place_en_strs)
 		place_en_strs = places_en_str.split()
@@ -211,6 +211,7 @@ def _add_single_local(name, sex, email, cell_phone, language_en_strs, place_en_s
 		go_place.save()
 
 	for interest_str in interest_en_strs:
+		print interest_str
 		interest = models.Interest.objects.get(name_en=interest_str)
 		has_interest = models.HasInterest()
 		has_interest.local = local
