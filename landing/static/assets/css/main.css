@@ -3264,7 +3264,7 @@
 	}
 
 	.local-image-block {
-		min-height: 20em;
+		min-height: 30em;
 		position: relative;
 	}
 
@@ -3291,5 +3291,9 @@
 
 	.local-meet-block {
 		min-height: 12em;
+	}
+
+	.local-column {
+		border-bottom: #e67e22 1px solid;
 	}
 
