@@ -1,177 +1,649 @@
-{% load i18n %}
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>FRNCi | Find Locals, Travel for Real.</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="/static/assets/css/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/static/assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie/v8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="/static/assets/css/ie/v9.css" /><![endif]-->
-		<!--[if lte IE 8]><script src="/static/assets/css/ie/respond.min.js"></script><![endif]-->
+
+		<title>Frnci</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/static/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link href="/static/css/fontello.css" rel="stylesheet" media="screen">
+		<link href="/static/css/mystyle.css" rel="stylesheet" media="screen">
+		<link href="/static/css/shop_slider.css" rel="stylesheet" media="screen">
+		<link href="/static/css/slider.css" rel="stylesheet" media="screen">
+		<link href="/static/css/slider_2.css" rel="stylesheet" media="screen">
+		<link href="/static/css/sub_slider.css" rel="stylesheet" media="screen">
+		<link href="/static/css/twitter_slider.css" rel="stylesheet" media="screen">
+		<link href="/static/css/slide_background.css" rel="stylesheet" media="screen">
+		<link href="/static/css/shop_slider_background.css" rel="stylesheet" media="screen">
+		<link href="/static/css/subpage_banners.css" rel="stylesheet" media="screen">
+		<link href="/static/css/jrating.jquery.css" rel="stylesheet" media="screen">
+		<link href="/static/css/my.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!--[if IE 9]><link rel="stylesheet" type="text/css" href="/static/css/ie9.css"><![endif]-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="/static/js/modernizr.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&amp;sensor=false"></script>
+		<script type="text/javascript" src="/static/js/google_map.js"></script>
+
 	</head>
-	<body class="contact">
-		<div id="page-wrapper">
+	<style>
+		img {
+			width: 100%;
+		}
+	</style>
+	<body class="blog-classic">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col col-sm-12">
+						<div class="navbar-header">
+							<!--div class="visible-xs panel-mobile"><a href="shop_view_cart.html">Cart</a><span>|</span><a href="#" class="md-trigger" data-modal="login-modal" onClick="return false;">Login</a></div-->
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bars"></span>
+								<span class="icon-bars"></span>
+								<span class="icon-bars"></span>
+							</button>
+							<a class="navbar-brand" href="#"><img src="/static/images/materials/logo-orange.png" alt="Logo"></a>
+						</div>
+						<div class="collapse navbar-collapse" id="mynavbar">
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="{% url 'home' %}"><img class="logo" src="/static/images/materials/logo-orange.png"></img></a></h1>
-					<nav id="nav">
-						<ul>
-							<li class="submenu">
-								<a href="#">{% trans "By Area" %}</a>
-								<ul>
-									<li><a href="/locals/area/eastern/">{% trans "East" %}</a></li>
-									<li><a href="/locals/area/southern/">{% trans "South" %}</a></li>
-									<li><a href="/locals/area/northern/">{% trans "North" %}</a></li>
-									<li><a href="/locals/area/western/">{% trans "West" %}</a></li>
-								</ul>
-							</li>
-							<li class="submenu">
-								<a href="#">{% trans "By Interest" %}</a>
-								<ul>
-									<li><a href="/locals/interest/local-culture/">{% trans "Local Culture" %}</a></li>
-									<li><a href="/locals/interest/art-design/">{% trans "Art &amp; Design" %}</a></li>
-									<li><a href="/locals/interest/nature-outdoors/">{% trans "Nature &amp; Outdoors" %}</a></li>
-									<li><a href="/locals/interest/sports-adventure/">{% trans "Sports &amp; Adventure" %}</a></li>
-									<li><a href="/locals/interest/food-drink/">{% trans "Food &amp; Drink" %}</a></li>
-									<li><a href="/locals/interest/film-music/">{% trans "Film &amp; Music" %}</a></li>
-								</ul>
-							</li>
-							<li><a href="{% trans "https://pin4.typeform.com/to/OS3BNX" %}" class="button special">{% trans "Register to be Local" %}</a></li>
-						</ul>
-					</nav>
-				</header>
+							<div class="right-cell">
+								<form class=" navbar-right" style="margin: 25px 0">
+									<ul class="nav navbar-nav">
 
-			<!-- Main -->
-				<article id="main">
+										<li class="dropdown">
+											<a href="contact.html">登入</a>
+											<ul class="dropdown-menu">
+												<li></li>
 
-					<header class="special container">
-						<span class="icon fa-check"></span>
-						<h2>{% trans "Find Your Local Friends" %}</h2>
-						<p>{% trans "to explore local spirit and connect to local community" %}</p>
-					</header>
+												<li>
+													<a href="contact.html">FB 登入</a>
+												</li>
 
-						<section class="wrapper style4 special">
+											</ul>
+										</li>
+										<li>
+											<a href="">關於我們</a>
+										</li>
+										<li>
+											<a href="">我想帶路</a>
+										</li>
+									</ul>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav><!-- Main Navigation --><!-- Main Navigation -->
+		<div class="blog-masonry-container blog_classic">
+			<section class="subpage-banner blog-classic-banner">
+				<div class="container">
+					<div class="row header-group">
+						<div class="col-sm-8 col-sm-12">
+							<h2>尋找當地的朋友</h2>
+							<p style="color:black">
+								體驗當地的人情味 感受與當地的連結
+							</p>
+						</div>
 
-							<!-- Content -->
-								<div class="content container 12u">
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="masonry-item">
+								<figure>
+									<div class="top-image productImage">
+										<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+									</div>
 
-									<div class="row">
-
-										{% for local in locals %}
-											<div class="local-column 4u 12u(narrower)">
-
-												<section class="local-image-block">
-
-													<div class="12u">
-														<img src="/static/images/locals/{{ local.email_hash }}" alt="Local Image" onError="this.onerror=null;this.src='/static/images/materials/no-such-person.png';" />
-														<h2>{{ local.name }}</h2>
-													</div>
-
-												</section>
-
-												<section class="local-info-block">
-
-													<div class="row">
-
-														<div class="4u">
-															<div class="capital bright">{% trans "I speak" %}</div><br>
-															{% for language in local.languages %}
-																<div>{{ language }}</div>
-															{% endfor %}
-														</div>
-														<div class="4u">
-															<div class="capital bright">{% trans "I am" %}</div><br>
-															{% for personality in local.personalities %}
-																<div>{{ personality }}</div>
-															{% endfor %}
-														</div>
-														<div class="4u">
-															<div class="capital bright">{% trans "I like" %}</div><br>
-															{% for hobby in local.hobbies %}
-																<div>{{ hobby }}</div>
-															{% endfor %}
-														</div>
-
-													</div>
-
-												</section>
-
-												<section class="local-activities-block">
-													<p><h3 class="bright">{% trans "What I like to share with travelers" %}</h3></p>
-													<p>
-														{% for activity in local.activities %}
-															{{ activity }}<br>
-														{% endfor %}
+									<figcaption>
+										<div class="description text-center">
+											<a class="post-title text_style">STEVE</a>
+											<div>
+												<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+											</div>
+											<div class="row">
+												<div class="col-md-4">
+													<p class="head_small">
+														我會講
 													</p>
-												</section>
-
-												<section class="local-places-block">
-													<p><h3 class="bright">{% trans "Where we could meet" %}</h3></p>
 													<p>
-														{% for place in local.places %}
-															{{ place }}
-														{% endfor %}
+														英語
 													</p>
-												</section>
-
-												<section class="local-meet-block">
-													<a class="button special" href="{% trans "https://pin4.typeform.com/to/gauKQF" %}?local={{ local.email_hash }}">{% trans "Request to Meet" %}</a>
-												</section>
+													<p>
+														中文
+													</p>
+													<p>
+														台語
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我的個性
+													</p>
+													<p>
+														樂觀
+													</p>
+													<p>
+														開朗
+													</p>
+													<p>
+														外向
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我喜歡
+													</p>
+													<p>
+														旅遊
+													</p>
+													<p>
+														電影
+													</p>
+													<p>
+														品酒
+													</p>
+												</div>
 
 											</div>
-										{% endfor %}
-
+											<div class="head_small">
+												我想和旅人
+											</div>
+											<p>
+												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+											</p>
+											<div class="head_small">
+												可以一起去
+											</div>
+											<p>
+												臺北 桃園 宜蘭
+											</p>
+										</div>
+									</figcaption>
+								</figure>
+								<div class="row">
+									<div class="col-md-12">
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
 									</div>
 
 								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="masonry-item">
+								<figure>
+									<div class="top-image productImage">
+										<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+									</div>
 
-						</section>
+									<figcaption>
+										<div class="description text-center">
+											<a class="post-title text_style">STEVE</a>
+											<div>
+												<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+											</div>
 
-					{% if not user.is_authenticated %}
-						<section class="special container">
-							<h1>{% trans "Want to see more locals?" %}</h1>
-							{% for provider in allaccess_providers %}
-								<p><a class="button special" href="{% url 'allaccess-login' provider.name %}">{% trans "Sign in with" %} {{ provider.name|title }} {% trans "to see more" %}</a></p>
-							{% endfor %}
-						</section>
-					{% endif %}
+											<div class="row">
+												<div class="col-md-4">
+													<p class="head_small">
+														我會講
+													</p>
+													<p>
+														英語
+													</p>
+													<p>
+														中文
+													</p>
+													<p>
+														台語
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我的個性
+													</p>
+													<p>
+														樂觀
+													</p>
+													<p>
+														開朗
+													</p>
+													<p>
+														外向
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我喜歡
+													</p>
+													<p>
+														旅遊
+													</p>
+													<p>
+														電影
+													</p>
+													<p>
+														品酒
+													</p>
+												</div>
 
-				</article>
+											</div>
+											<div class="head_small">
+												我想和旅人
+											</div>
+											<p>
+												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+											</p>
+											<div class="head_small">
+												可以一起去
+											</div>
+											<p>
+												臺北 桃園 宜蘭
+											</p>
+										</div>
+									</figcaption>
+								</figure>
+								<div class="row">
+									<div class="col-md-12">
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+									</div>
 
-			<!-- Footer -->
-				<footer id="footer">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="masonry-item">
+								<figure>
+									<div class="top-image productImage">
+										<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+									</div>
 
-					<ul class="icons">
-						<li><a class="icon circle fa-facebook" href="https://www.facebook.com/pages/FRNCI-Friends-City/1604262479817205?fref=ts"><span class="label">Facebook</span></a></li>
-						<li><a class="icon circle fa-instagram" href="https://instagram.com/friendsandcity/"><span class="label">Instagram</span></a></li>
-						<li><a class="icon circle fa-envelope" href="mailto:contactus@frnci.com"><span class="label">Email</span></a></li>
-					</ul>
+									<figcaption>
+										<div class="description text-center">
+											<a class="post-title text_style">STEVE</a>
+											<div>
+												<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+											</div>
 
-					<ul class="copyright">
-						<li>&copy; FRNCi</li>
-					</ul>
+											<div class="row">
+												<div class="col-md-4">
+													<p class="head_small">
+														我會講
+													</p>
+													<p>
+														英語
+													</p>
+													<p>
+														中文
+													</p>
+													<p>
+														台語
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我的個性
+													</p>
+													<p>
+														樂觀
+													</p>
+													<p>
+														開朗
+													</p>
+													<p>
+														外向
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我喜歡
+													</p>
+													<p>
+														旅遊
+													</p>
+													<p>
+														電影
+													</p>
+													<p>
+														品酒
+													</p>
+												</div>
 
-				</footer>
+											</div>
+											<div class="head_small">
+												我想和旅人
+											</div>
+											<p>
+												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+											</p>
+											<div class="head_small">
+												可以一起去
+											</div>
+											<p>
+												臺北 桃園 宜蘭
+											</p>
+										</div>
+									</figcaption>
+								</figure>
+								<div class="row">
+									<div class="col-md-12">
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+									</div>
 
-		</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top:45px;">
+						<div class="col-md-4">
+							<div class="masonry-item">
+								<figure>
+									<div class="top-image productImage">
+										<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+									</div>
 
-		<!-- Scripts -->
-			<script src="/static/assets/js/jquery.min.js"></script>
-			<script src="/static/assets/js/jquery.dropotron.min.js"></script>
-			<script src="/static/assets/js/jquery.scrolly.min.js"></script>
-			<script src="/static/assets/js/jquery.scrollgress.min.js"></script>
-			<script src="/static/assets/js/skel.min.js"></script>
-			<script src="/static/assets/js/util.js"></script>
-			<script src="/static/assets/js/main.js"></script>
-			<script src="/static/assets/js/ga.js"></script>
+									<figcaption>
+										<div class="description text-center">
+											<a class="post-title text_style">STEVE</a>
+											<div>
+												<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+											</div>
 
+											<div class="row">
+												<div class="col-md-4">
+													<p class="head_small">
+														我會講
+													</p>
+													<p>
+														英語
+													</p>
+													<p>
+														中文
+													</p>
+													<p>
+														台語
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我的個性
+													</p>
+													<p>
+														樂觀
+													</p>
+													<p>
+														開朗
+													</p>
+													<p>
+														外向
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我喜歡
+													</p>
+													<p>
+														旅遊
+													</p>
+													<p>
+														電影
+													</p>
+													<p>
+														品酒
+													</p>
+												</div>
+
+											</div>
+											<div class="head_small">
+												我想和旅人
+											</div>
+											<p>
+												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+											</p>
+											<div class="head_small">
+												可以一起去
+											</div>
+											<p>
+												臺北 桃園 宜蘭
+											</p>
+										</div>
+									</figcaption>
+								</figure>
+								<div class="row">
+									<div class="col-md-12">
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="masonry-item">
+								<figure>
+									<div class="top-image productImage">
+										<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+									</div>
+
+									<figcaption>
+										<div class="description text-center">
+											<a class="post-title text_style">STEVE</a>
+											<div>
+												<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+											</div>
+
+											<div class="row">
+												<div class="col-md-4">
+													<p class="head_small">
+														我會講
+													</p>
+													<p>
+														英語
+													</p>
+													<p>
+														中文
+													</p>
+													<p>
+														台語
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我的個性
+													</p>
+													<p>
+														樂觀
+													</p>
+													<p>
+														開朗
+													</p>
+													<p>
+														外向
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我喜歡
+													</p>
+													<p>
+														旅遊
+													</p>
+													<p>
+														電影
+													</p>
+													<p>
+														品酒
+													</p>
+												</div>
+
+											</div>
+											<div class="head_small">
+												我想和旅人
+											</div>
+											<p>
+												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+											</p>
+											<div class="head_small">
+												可以一起去
+											</div>
+											<p>
+												臺北 桃園 宜蘭
+											</p>
+										</div>
+									</figcaption>
+								</figure>
+								<div class="row">
+									<div class="col-md-12">
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="masonry-item">
+								<figure>
+									<div class="top-image productImage">
+										<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+									</div>
+
+									<figcaption>
+										<div class="description text-center">
+											<a class="post-title text_style">STEVE</a>
+											<div>
+												<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+												<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+											</div>
+
+											<div class="row">
+												<div class="col-md-4">
+													<p class="head_small">
+														我會講
+													</p>
+													<p>
+														英語
+													</p>
+													<p>
+														中文
+													</p>
+													<p>
+														台語
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我的個性
+													</p>
+													<p>
+														樂觀
+													</p>
+													<p>
+														開朗
+													</p>
+													<p>
+														外向
+													</p>
+												</div>
+												<div class="col-md-4">
+													<p class="head_small">
+														我喜歡
+													</p>
+													<p>
+														旅遊
+													</p>
+													<p>
+														電影
+													</p>
+													<p>
+														品酒
+													</p>
+												</div>
+
+											</div>
+											<div class="head_small">
+												我想和旅人
+											</div>
+											<p>
+												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+											</p>
+											<div class="head_small">
+												可以一起去
+											</div>
+											<p>
+												臺北 桃園 宜蘭
+											</p>
+										</div>
+									</figcaption>
+								</figure>
+								<div class="row">
+									<div class="col-md-12">
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+			</section>
+
+			<!-- Bottom Section -->
+			<section class="bottom_section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 about-us">
+							<div class="row text-center">
+								<div class="col-lg-12">
+
+									<ul class="list-inline social">
+										<li>
+											<a href="" class="fa fa-facebook-square"></a>
+										</li>
+
+										<li>
+											<a class="fa fa-circle fa-instagram" href="#"></a>
+										</li>
+
+										<li>
+											<a class="fa fa-envelope" href="#"></a>
+										</li>
+									</ul>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="md-overlay"></div>
+			<div class="jquery-media-detect"></div>
+			<script type="text/javascript" src="/static/js/jrating.jquery.js"></script>
+			<script type="text/javascript" src="/static/js/myscript.js"></script>
+			<script type="text/javascript" src="/static/js/modal_effects.js"></script>
 	</body>
 </html>

@@ -1,365 +1,1009 @@
-{% load i18n %}
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>FRNCi | Find Locals, Travel for Real.</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/static/assets/css/bootstrap-theme.min.css">
-		<!--[if lte IE 8]><script src="/static/assets/css/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/static/assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie/v8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="/static/assets/css/ie/v9.css" /><![endif]-->
-		<!--[if lte IE 8]><script src="/static/assets/css/ie/respond.min.js"></script><![endif]-->
+
+		<title>Frnci</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/static/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link href="/static/css/fontello.css" rel="stylesheet" media="screen">
+		<link href="/static/css/mystyle.css" rel="stylesheet" media="screen">
+		<link href="/static/css/shop_slider.css" rel="stylesheet" media="screen">
+		<link href="/static/css/slider.css" rel="stylesheet" media="screen">
+		<link href="/static/css/slider_2.css" rel="stylesheet" media="screen">
+		<link href="/static/css/sub_slider.css" rel="stylesheet" media="screen">
+		<link href="/static/css/twitter_slider.css" rel="stylesheet" media="screen">
+		<link href="/static/css/slide_background.css" rel="stylesheet" media="screen">
+		<link href="/static/css/shop_slider_background.css" rel="stylesheet" media="screen">
+		<link href="/static/css/subpage_banners.css" rel="stylesheet" media="screen">
+		<link href="/static/css/jrating.jquery.css" rel="stylesheet" media="screen">
+		<!--[if IE 9]><link rel="stylesheet" type="text/css" href="/static/css/ie9.css"><![endif]-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="/static/js/modernizr.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&amp;sensor=false"></script>
+		<script type="text/javascript" src="/static/js/google_map.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
-	<body class="index">
-		<div id="page-wrapper">
+	<link href="/static/css/my.css" rel="stylesheet" media="screen">
+	</head>
+	<body class="home">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col col-sm-12">
+						<div class="navbar-header">
+							<!--div class="visible-xs panel-mobile"><a href="shop_view_cart.html">Cart</a><span>|</span><a href="#" class="md-trigger" data-modal="login-modal" onClick="return false;">Login</a></div-->
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bars"></span>
+								<span class="icon-bars"></span>
+								<span class="icon-bars"></span>
+							</button>
+							<a class="navbar-brand" href="#"><img src="http://www.frnci.com/static/images/materials/logo-orange.png" alt="Logo"></a>
+						</div>
+						<div class="collapse navbar-collapse" id="mynavbar">
 
-			<!-- Header -->
-				<header id="header" class="alt">
-					<h1 id="logo"><a href="#"><img class="logo" src="/static/images/materials/logo-orange.png"></img></a></h1>
-					<nav id="nav">
-						<ul>
-							{% if user.is_authenticated %}
-								<li>{% trans "Hi, " %}{{ info.name }}</li>
-								<li class="current"><a href="{% url 'logout' %}">{% trans "Sign Out" %}</a></li>
-							{% else %}
-								<li class="submenu">
-									<a href="#">{% trans "Sign In" %}</a>
-									{% for provider in allaccess_providers %}
-										<ul>
-											<li><a href="{% url 'allaccess-login' provider.name %}">{{ provider.name|title }}</a></li>
-										</ul>
-									{% endfor %}
-								</li>
-							{% endif %}
+							<div class="right-cell">
+								<form class=" navbar-right" style="margin: 25px 0">
+									<ul class="nav navbar-nav">
 
-							<li class="current"><a href="#about-us" class="scrolly">{% trans "About Us" %}</a></li>
-							<li><a href="{% trans "https://pin4.typeform.com/to/OS3BNX" %}" class="button special">{% trans "Register to be Local" %}</a></li>
-						</ul>
-					</nav>
-				</header>
+										<li class="dropdown">
+											<a href="contact.html">登入</a>
+											<ul class="dropdown-menu">
+												<li></li>
 
-			<!-- Banner -->
-				<section id="banner">
+												<li>
+													<a href="contact.html">FB 登入</a>
+												</li>
 
-					<!--
-						".inner" is set up as an inline-block so it automatically expands
-						in both directions to fit whatever's inside it. This means it won't
-						automatically wrap lines, so be sure to use line breaks where
-						appropriate (<br />).
-					-->
-					<div class="inner">
+											</ul>
+										</li>
+										<li>
+											<a href="">關於我們</a>
+										</li>
+										<li>
+											<a href="">我想帶路</a>
+										</li>
+									</ul>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav><!-- Main Navigation -->
+		<div class="mainbanner">
+			<div id="sequence">
+				<span class="sequence-prev"><i class="icon-left-open-big"></i></span>
+				<span class="sequence-next"><i class="icon-right-open-big"></i></span>
+				<ul class="sequence-canvas">
+					<li class="slide-frame">
+						<div style="background: rgba(0,0,0,0.5)">
+							<div class="slide-bg slide-bg1"></div>
+						</div>
 
-						<header>
-							<h2>{% trans "Find Locals, Travel for Real." %}</h2>
-						</header>
-						<p>{% trans "Explore Local Spirit with Hospitable Locals" %}</p>
-						<footer>
-							<ul class="buttons vertical">
-								<li><a href="#main" class="button scrolly">{% trans "How it Works" %}</a></li>
-							</ul>
-						</footer>
+					</li><!-- Frame 1 -->
+					<li class="slide-frame">
+						<div class="slide-bg slide-bg2"></div>
+						<img class="slide-logo" src="http://www.frnci.com/static/images/materials/logo-orange.png" alt="Logo">
 
+					</li>
+					<!-- Frame 2 -->
+					<li class="slide-frame">
+						<div class="slide-bg slide-bg3"></div>
+						<img class="slide-logo" src="http://www.frnci.com/static/images/materials/logo-orange.png" alt="Logo">
+
+					</li><!-- Frame 3 -->
+
+				</ul>
+			</div>
+		</div>
+		<!-- Main Banner -->
+		<div class="grid-icon-container scroll-target">
+			<section class="container grid-icon">
+				<div class="row">
+					<div class="col col-sm-12 col-md-4">
+						<span><i class="fa fa-search"></i></span>
+						<h4 class="font22">步驟一</h4>
+						<h3>尋找當地人</h3>
+						<p class="text_black font19">
+							以目的地或興趣作為搜尋依據
+						</p>
+					</div>
+					<div class="col col-sm-12 col-md-4">
+						<span><i class="fa fa-comments"></i></span>
+						<h4 class="font22">步驟二</h4>
+						<h3>線上媒合</h3>
+						<p class="text_black font19">
+							填寫預約表單 平台提供聯繫⽅
+						</p>
+					</div>
+					<div class="col col-sm-12 col-md-4">
+						<span><i class="fa fa-users"></i></span>
+						<h4 class="font22">步驟三</h4>
+						<h3>見面交流</h3>
+						<p class="text_black font19">
+							當地人與旅人實體交流
+						</p>
 					</div>
 
-				</section>
+				</div>
+			</section>
+			<svg id="bigTriangleColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 102" preserveAspectRatio="none">
+				<path d="M0 0 L50 100 L100 0 Z" />
+			</svg>
+		</div><!-- Grid Icon -->
 
-			<!-- Main -->
-				<article id="main">
+		<div class="dt-shop-info-section" data-type="background" data-speed="3">
+			<div class="container">
+				<div class="row">
+					<div class="col col-md-offset-2 col-md-8 col-sm-4 col-xs-12">
+						<div class="dt-service">
 
-						<section class="wrapper style1 container special">
-							<div class="row">
-								<div class="4u 12u(narrower)">
-
-									<section>
-
-										<span class="icon featured fa-search"></span>
-										<header>
-											<h4>{% trans "Step 1" %}</h4>
-											<h3>{% trans "Search for Locals" %}</h3>
-										</header>
-										<p>{% trans "Searching based on your travel destination or interest." %}</p>
-									</section>
-
-								</div>
-								<div class="4u 12u(narrower)">
-
-									<section>
-										<span class="icon featured fa-comments"></span>
-										<header>
-											<h4>{% trans "Step 2" %}</h4>
-											<h3>{% trans "Match Online" %}</h3>
-										</header>
-										<p>{% trans "Fill in the online form, and get into contact after confirmation." %}</p>
-									</section>
-
-								</div>
-								<div class="4u 12u(narrower)">
-
-									<section>
-										<span class="icon featured fa-users"></span>
-										<header>
-											<h4>{% trans "Step 3" %}</h4>
-											<h3>{% trans "Meetup &amp; Befriend" %}</h3>
-										</header>
-										<p>{% trans "Locals and travelers meet each other, and get to know each other's culture." %}</p>
-									</section>
-
-								</div>
-							</div>
-						</section>
-
-						<section class="wrapper style2 container">
-
-							<header class="major">
-								<h2><b>{% trans "Why FRNCi?" %}</b></h2>
-							</header>
-
-							<p><strong>{% trans "If you are a traveler..." %}</strong></p>
-
-							<p>
-								{% trans "wanting to explore hidden spots and local spirit" %}<br>
-								{% trans "wanting to meet locals with similar interest" %}
+							<h2 class="bolder">為什麼要用 FRNCI ？</h2>
+							<p class="bolder text_black font19">
+								【如果你是這樣的旅人】
+							</p>
+							<p class="bolder text_black font19">
+								想探索私房景點或探索當地文化的你
+								<br>
+								想和興趣相似的新朋友深度交流的你
+							</p>
+							<p class="bolder text_black font19">
+								<strong>【如果你是這樣的當地人】</strong>
+							</p>
+							<p class="bolder text_black font19">
+								想認識世界各地不同文化的朋友的你
+								<br>
+								想分享更多你的文化和生活體驗的你
 							</p>
 
-							<p><strong>{% trans "If you are a local..." %}</strong></p>
-
-							<p>
-								{% trans "wanting to make friends from all over the world" %}<br>
-								{% trans "wanting to share local culture and your daily life" %}
-							</p>
-
-							<p><h2><b>{% trans "Redefine your journey with us!" %}</b></h2></p>
-							<div><a href="#by-area" class="button special scrolly">{% trans "Look for local friends" %}</a></div>
-
-						</section>
-
-						<section id="by-area" class="wrapper style3 container special">
-
-							<header class="major">
-								<h2>{% trans "Where are you going?" %}</h2>
-							</header>
-
-							<div class="row">
-								<div class="6u 12u(narrower)">
-
-									<section class="area-interest">
-										<a href="/locals/area/eastern/" class="image featured"><img src="/static/images/areas/east.jpg" alt="" /><h2 class="overlay larger">{% trans "East" %}</h2></a>
-									</section>
-
-								</div>
-								<div class="6u 12u(narrower)">
-
-									<section class="area-interest">
-										<a href="/locals/area/southern/" class="image featured"><img src="/static/images/areas/south.jpg" alt="" /><h2 class="overlay larger">{% trans "South" %}</h2></a>
-									</section>
-
-								</div>
+							<p></p><h2><b>歡迎你和我們一起重新定義「旅行」！</b></h2>
+							<div class="buy_now">
+								<a href="#by-area" class="btn-buynow">往下尋找當地朋友</a>
 							</div>
-							<div class="row">
-								<div class="6u 12u(narrower)">
+						</div>
+					</div>
 
-									<section class="area-interest">
-										<a href="/locals/area/northern/" class="image featured"><img src="/static/images/areas/north.jpg" alt="" /><h2 class="overlay larger">{% trans "North" %}</h2></a>
-									</section>
-
-								</div>
-								<div class="6u 12u(narrower)">
-
-									<section class="area-interest">
-										<a href="/locals/area/western/" class="image featured"><img src="/static/images/areas/west.jpg" alt="" /><h2 class="overlay larger">{% trans "West" %}</h2></a>
-									</section>
-
-								</div>
-							</div>
-
-						</section>
-
-						<section class="wrapper style3 container special">
-
-							<header class="major">
-								<h2>{% trans "What interests you?" %}</h2>
-							</header>
-
-							<div class="row">
-								<div class="4u 12u(narrower)">
-
-									<section class="area-interest">
-										<a href="/locals/interest/local-culture/" class="image featured"><img src="/static/images/interests/local-culture.jpg" alt="" /><h2 class="overlay smaller">{% trans "Local Culture" %}</h2></a>
-									</section>
-
-								</div>
-								<div class="4u 12u(narrower)">
-
-									<section class="area-interest">
-										<a href="/locals/interest/art-design/" class="image featured"><img src="/static/images/interests/art-design.jpg" alt="" /><h2 class="overlay smaller">{% trans "Art &amp; Design" %}</h2></a>
-									</section>
-
-								</div>
-								<div class="4u 12u(narrower)">
-
-									<section class="area-interest">
-										<a href="/locals/interest/nature-outdoors/" class="image featured"><img src="/static/images/interests/nature-outdoors.jpg" alt="" /><h2 class="overlay smaller">{% trans "Nature &amp; Outdoors" %}</h2></a>
-									</section>
-
-								</div>
-							</div>
-							<div class="row">
-								<div class="4u 12u(narrower)">
-
-									<section class="area-interest">
-										<a href="/locals/interest/sports-adventure/" class="image featured"><img src="/static/images/interests/sports-adventure.jpg" alt="" /><h2 class="overlay smaller">{% trans "Sports &amp; Adventure" %}</h2></a>
-									</section>
-
-								</div>
-								<div class="4u 12u(narrower)">
-
-									<section class="area-interest">
-										<a href="/locals/interest/food-drink/" class="image featured"><img src="/static/images/interests/food-drink.jpg" alt="" /><h2 class="overlay smaller">{% trans "Food &amp; Drink" %}</h2></a>
-									</section>
-
-								</div>
-								<div class="4u 12u(narrower)">
-
-									<section class="area-interest">
-										<a href="/locals/interest/film-music/" class="image featured"><img src="/static/images/interests/film-music.jpg" alt="" /><h2 class="overlay smaller">{% trans "Film &amp; Music" %}</h2></a>
-									</section>
-
-								</div>
-							</div>
-
-						</section>
-
+				</div>
+			</div>
+		</div>
+		<div class="dt-shop-category">
+			<div class="container">
+				<div class="section-head row">
+					<header class="col col-xs-12 centered">
 						<section>
-							<div>
-								<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000">
+							<h2>你想去哪裡旅行呢？</h2>
+						</section>
+						<hr>
+					</header>
+				</div>
+				<div class="row">
 
-									<div class="carousel-inner" role="listbox">
+					<div class="col-sm-12 col-md-6">
+						<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsive" src="http://www.frnci.com/static/images/areas/east.jpg" alt="">
+						<div class="text-description">
+							<h3>東部</h3>
 
-										<div class="item active">
-											<div class="feedback-item">
-												<img src="/static/images/feedbacks/feedback-1.jpg">
-												<div>
-													<p>"It would be <b>very helpful for foreigners</b> if they have <b>a guide to introduce places and tell about culture.</b> The coolest thing in Taiwan is to get to know the mix of old traditions and modern lifestyle."</p>
-													<p>- Sebasitian, Finland</p>
-												</div>
-											</div>
+						</div> </a>
+					</div>
+					<div class="col-sm-12 col-md-6">
+						<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsive" src="http://www.frnci.com/static/images/areas/south.jpg" alt="">
+						<div class="text-description">
+							<h3>南部</h3>
+
+						</div> </a>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 30px;">
+					<div class="col-sm-12 col-md-6">
+						<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsives" src="http://www.frnci.com/static/images/areas/north.jpg" alt="">
+						<div class="text-description">
+							<h3>北部</h3>
+
+						</div> </a>
+					</div>
+					<div class="col-sm-12 col-md-6">
+						<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsives" src="http://www.frnci.com/static/images/areas/west.jpg" alt="">
+						<div class="text-description">
+							<h3>西部</h3>
+
+						</div> </a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<section class="dt-shop-category">
+
+			<header class="major text-center marginBtm30">
+				<h2>你對什麼有興趣？</h2>
+			</header>
+
+			<div class="row text-center">
+				<div class="col-md-4">
+
+					<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsives" src="http://www.frnci.com/static/images/areas/east.jpg" alt="">
+					<div class="text-description">
+						<h3>在地文化</h3>
+
+					</div> </a>
+
+				</div>
+				<div class="col-md-4">
+					<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsives" src="http://www.frnci.com/static/images/interests/local-culture.jpg" alt="">
+					<div class="text-description">
+						<h3>藝術/設計</h3>
+
+					</div> </a>
+					<!-- <section class="area-interest" style="background-color: rgba(0,0,0,0.5)">
+					<a href="http://www.frnci.com/static/images/interests/local-culture.jpg" class="image featured"> <img class="pic100" src="http://www.frnci.com/static/images/areas/east.jpg" alt=""> <h2 class="overlay1 larger">藝術/設計</h2></a>
+					</section> -->
+
+				</div>
+				<div class="col-md-4">
+					<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsives" src="http://www.frnci.com/static/images/interests/local-culture.jpg" alt="">
+					<div class="text-description">
+						<h3>大自然/戶外</h3>
+
+					</div> </a>
+					<!-- <section class="area-interest" style="background-color: rgba(0,0,0,0.5)">
+					<a href="/locals/area/southern/" class="image featured"><img class="pic100" src="http://www.frnci.com/static/images/areas/south.jpg" alt=""><h2 class="overlay1 larger">大自然/戶外</h2></a>
+					</section> -->
+
+				</div>
+			</div>
+			<div class="row text-center" style="margin-top: 30px;">
+				<div class="col-md-4">
+					<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsives" src="http://www.frnci.com/static/images/interests/local-culture.jpg" alt="">
+					<div class="text-description">
+						<h3>在地文化</h3>
+
+					</div> </a>
+
+				</div>
+				<div class="col-md-4">
+					<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsives" src="http://www.frnci.com/static/images/interests/local-culture.jpg" alt="">
+					<div class="text-description">
+						<h3>藝術/設計</h3>
+
+					</div> </a>
+					<!-- <section class="area-interest" style="background-color: rgba(0,0,0,0.5)">
+					<a href="http://www.frnci.com/static/images/interests/local-culture.jpg" class="image featured"> <img class="pic100" src="http://www.frnci.com/static/images/areas/east.jpg" alt=""> <h2 class="overlay1 larger">藝術/設計</h2></a>
+					</section> -->
+
+				</div>
+				<div class="col-md-4">
+					<a href="shop_category_view_fullwidth.html" class="thumbnail-container"> <img class="img-responsives" src="http://www.frnci.com/static/images/interests/local-culture.jpg" alt="">
+					<div class="text-description">
+						<h3>藝術/設計</h3>
+
+					</div> </a>
+					<!-- <section class="area-interest" style="background-color: rgba(0,0,0,0.5)">
+					<a href="/locals/area/southern/" class="image featured"><img class="pic100" src="http://www.frnci.com/static/images/areas/south.jpg" alt=""><h2 class="overlay1 larger">大自然/戶外</h2></a>
+					</section> -->
+
+				</div>
+			</div>
+		</section>
+		<div class="container" style="background-color: #DADADA;margin-top: 30px;margin-bottom: 50px;">
+
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<div class="row" style="margin: 30px 0px;">
+							<div class="col-md-4">
+								<div class="masonry-item bk_orange">
+									<figure>
+										<div class="top-image productImage">
+											<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
 										</div>
 
-										<div class="item">
-											<div class="feedback-item">
-												<img src="/static/images/feedbacks/feedback-2.jpg">
+										<figcaption>
+											<div class="description text-center">
+												<a class="post-title text_style">STEVE</a>
 												<div>
-													<p>"The most important thing is to <b>show your culture to foreigners.</b> It is <b>the only thing they will remember later during their life time.</b>"</p>
-													<p>- Amandine, France</p>
+													<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
 												</div>
-											</div>
-										</div>
 
-										<div class="item">
-											<div class="feedback-item">
-												<img src="/static/images/feedbacks/feedback-3.jpg">
-												<div>
-													<p>"It's one thing to travel. I love it. But <b>it's another thing to travel with local friends. I LOVE it. Getting around with locals makes you dive deeper into another culture and another way of living life.</b>"</p>
-													<p>- Rebekka, Germany</p>
+												<div class="row">
+													<div class="col-md-4">
+														<p class="head_small">
+															我會講
+														</p>
+														<p>
+															英語
+														</p>
+														<p>
+															中文
+														</p>
+														<p>
+															台語
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我的個性
+														</p>
+														<p>
+															樂觀
+														</p>
+														<p>
+															開朗
+														</p>
+														<p>
+															外向
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我喜歡
+														</p>
+														<p>
+															旅遊
+														</p>
+														<p>
+															電影
+														</p>
+														<p>
+															品酒
+														</p>
+													</div>
+
 												</div>
+												<div class="head_small">
+													我想和旅人
+												</div>
+												<p>
+													去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+												</p>
+												<div class="head_small">
+													可以一起去
+												</div>
+												<p>
+													臺北 桃園 宜蘭
+												</p>
 											</div>
+										</figcaption>
+									</figure>
+									<div class="row">
+										<div class="col-md-12">
+											<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
 										</div>
 
 									</div>
-
-									<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-										<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-										<span class="sr-only">Previous</span>
-									</a>
-									<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-										<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-										<span class="sr-only">Next</span>
-									</a>
 								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="masonry-item bk_orange">
+									<figure>
+										<div class="top-image productImage">
+											<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+										</div>
+
+										<figcaption>
+											<div class="description text-center">
+												<a class="post-title text_style">STEVE</a>
+												<div>
+													<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+												</div>
+
+												<div class="row">
+													<div class="col-md-4">
+														<p class="head_small">
+															我會講
+														</p>
+														<p>
+															英語
+														</p>
+														<p>
+															中文
+														</p>
+														<p>
+															台語
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我的個性
+														</p>
+														<p>
+															樂觀
+														</p>
+														<p>
+															開朗
+														</p>
+														<p>
+															外向
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我喜歡
+														</p>
+														<p>
+															旅遊
+														</p>
+														<p>
+															電影
+														</p>
+														<p>
+															品酒
+														</p>
+													</div>
+
+												</div>
+												<div class="head_small">
+													我想和旅人
+												</div>
+												<p>
+													去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+												</p>
+												<div class="head_small">
+													可以一起去
+												</div>
+												<p>
+													臺北 桃園 宜蘭
+												</p>
+											</div>
+										</figcaption>
+									</figure>
+									<div class="row">
+										<div class="col-md-12">
+											<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="masonry-item bk_orange">
+									<figure>
+										<div class="top-image productImage">
+											<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+										</div>
+
+										<figcaption>
+											<div class="description text-center">
+												<a class="post-title text_style">STEVE</a>
+												<div>
+													<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+												</div>
+
+												<div class="row">
+													<div class="col-md-4">
+														<p class="head_small">
+															我會講
+														</p>
+														<p>
+															英語
+														</p>
+														<p>
+															中文
+														</p>
+														<p>
+															台語
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我的個性
+														</p>
+														<p>
+															樂觀
+														</p>
+														<p>
+															開朗
+														</p>
+														<p>
+															外向
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我喜歡
+														</p>
+														<p>
+															旅遊
+														</p>
+														<p>
+															電影
+														</p>
+														<p>
+															品酒
+														</p>
+													</div>
+
+												</div>
+												<div class="head_small">
+													我想和旅人
+												</div>
+												<p>
+													去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+												</p>
+												<div class="head_small">
+													可以一起去
+												</div>
+												<p>
+													臺北 桃園 宜蘭
+												</p>
+											</div>
+										</figcaption>
+									</figure>
+									<div class="row">
+										<div class="col-md-12">
+											<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="item">
+						<div class="row" style="margin: 30px 0px;">
+							<div class="col-md-4">
+								<div class="masonry-item bk_orange">
+									<figure>
+										<div class="top-image productImage">
+											<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+										</div>
+
+										<figcaption>
+											<div class="description text-center">
+												<a class="post-title text_style">STEVE</a>
+												<div>
+													<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+												</div>
+
+												<div class="row">
+													<div class="col-md-4">
+														<p class="head_small">
+															我會講
+														</p>
+														<p>
+															英語
+														</p>
+														<p>
+															中文
+														</p>
+														<p>
+															台語
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我的個性
+														</p>
+														<p>
+															樂觀
+														</p>
+														<p>
+															開朗
+														</p>
+														<p>
+															外向
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我喜歡
+														</p>
+														<p>
+															旅遊
+														</p>
+														<p>
+															電影
+														</p>
+														<p>
+															品酒
+														</p>
+													</div>
+
+												</div>
+												<div class="head_small">
+													我想和旅人
+												</div>
+												<p>
+													去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+												</p>
+												<div class="head_small">
+													可以一起去
+												</div>
+												<p>
+													臺北 桃園 宜蘭
+												</p>
+											</div>
+										</figcaption>
+									</figure>
+									<div class="row">
+										<div class="col-md-12">
+											<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="masonry-item bk_orange">
+									<figure>
+										<div class="top-image productImage">
+											<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+										</div>
+
+										<figcaption>
+											<div class="description text-center">
+												<a class="post-title text_style">STEVE</a>
+												<div>
+													<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+												</div>
+
+												<div class="row">
+													<div class="col-md-4">
+														<p class="head_small">
+															我會講
+														</p>
+														<p>
+															英語
+														</p>
+														<p>
+															中文
+														</p>
+														<p>
+															台語
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我的個性
+														</p>
+														<p>
+															樂觀
+														</p>
+														<p>
+															開朗
+														</p>
+														<p>
+															外向
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我喜歡
+														</p>
+														<p>
+															旅遊
+														</p>
+														<p>
+															電影
+														</p>
+														<p>
+															品酒
+														</p>
+													</div>
+
+												</div>
+												<div class="head_small">
+													我想和旅人
+												</div>
+												<p>
+													去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+												</p>
+												<div class="head_small">
+													可以一起去
+												</div>
+												<p>
+													臺北 桃園 宜蘭
+												</p>
+											</div>
+										</figcaption>
+									</figure>
+									<div class="row">
+										<div class="col-md-12">
+											<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="masonry-item bk_orange">
+									<figure>
+										<div class="top-image productImage">
+											<img src="https://i.warosu.org/data/fa/img/0071/13/1382414686236.jpg" alt="how to create break fast food delicious"/>
+										</div>
+
+										<figcaption>
+											<div class="description text-center">
+												<a class="post-title text_style">STEVE</a>
+												<div>
+													<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
+													<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+												</div>
+
+												<div class="row">
+													<div class="col-md-4">
+														<p class="head_small">
+															我會講
+														</p>
+														<p>
+															英語
+														</p>
+														<p>
+															中文
+														</p>
+														<p>
+															台語
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我的個性
+														</p>
+														<p>
+															樂觀
+														</p>
+														<p>
+															開朗
+														</p>
+														<p>
+															外向
+														</p>
+													</div>
+													<div class="col-md-4">
+														<p class="head_small">
+															我喜歡
+														</p>
+														<p>
+															旅遊
+														</p>
+														<p>
+															電影
+														</p>
+														<p>
+															品酒
+														</p>
+													</div>
+
+												</div>
+												<div class="head_small">
+													我想和旅人
+												</div>
+												<p>
+													去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
+												</p>
+												<div class="head_small">
+													可以一起去
+												</div>
+												<p>
+													臺北 桃園 宜蘭
+												</p>
+											</div>
+										</figcaption>
+									</figure>
+									<div class="row">
+										<div class="col-md-12">
+											<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Left and right controls -->
+			</div>
+		</div>
+		<section class="fun-facts-section">
+			<div class="container grid-icon">
+				<div class="row">
+					<div class="section-head">
+						<header class="col col-xs-12 centered">
+							<section>
+								<h2>關於我們</h2>
+							</section>
+							<hr>
+							<p class="descriptionText"></p>
+
+						</header>
+						<div class="col-md-offset-4 col-md-4">
+							<div style="font-size: 20px">
+								<div>
+									瘋狂背包客 <b>Pin</b>
+								</div>
+								<div>
+									國際文創人 <b>Max</b>
+								</div>
+								<div>
+									美食部落客 <b>Jennifer</b>
+								</div>
+								<div>
+									領隊導遊哥 <b>Daniel</b>
+								</div>
+								<div>
+									音樂夢想家 <b>John</b>
+								</div>
+								<p></p>
+							</div>
+
+							<header style="">
+								<h3>使命</h3>
+							</header>
+
+							<div style="font-size: 20px;">
+								<div>
+									讓旅人體驗最貼近當地的生活之美
+								</div>
+								<div>
+									讓當地人盡情分享道地生活與文化
+								</div>
+								<div>
+									連結旅人與當地人，深度交流不再是難事
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Bottom Section -->
+
+		<section class="bottom_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 about-us">
+						<div class="row text-center">
+							<div class="col-lg-12">
+
+								<ul class="list-inline social">
+									<li>
+										<a href="" class="fa fa-facebook-square"></a>
+									</li>
+
+									<li>
+										<a class="fa fa-instagram" href="#"></a>
+									</li>
+									<li>
+										<a class="fa fa-envelope" href="#"></a>
+									</li>
+
+								</ul>
 
 							</div>
-						</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- login & register form -->
+		<div id="login-modal" class="popup-gallery md-modal md-effect-1">
+			<div class="md-content form">
+				<h1>Sign In</h1>
+				<div class="row form-body">
+					<div class="col-xs-12">
+						<form role="form" id="login-form" action="#">
+							<div class="form-group">
+								<label>Username</label>
+								<input type="text" class="form-control" name="username"  required>
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+								<input type="password" class="form-control" name="password1" >
+							</div>
+							<div class="row">
+								<div class="dt-form-info col-xs-12 col-sm-8">
+									<label> you don't have account? <a href="#" class="md-trigger" data-modal="register-modal" onClick="$('#login-modal').removeClass('md-show');return false;">Register</a> </label>
+								</div>
+								<div class="form-group col-xs-12 col-sm-4">
+									<button type="submit" class="btn-submit">
+										Sign In
+									</button>
+								</div>
+							</div>
 
-						<section id="about-us" class="wrapper container">
+						</form>
+					</div>
+				</div>
 
-									<header>
-										<h2>{% trans "About Us" %}</h2>
-									</header>
+				<a href="#" class="md-close right"><i class="icon-cancel"></i></a>
+			</div>
+		</div>
+		<div id="register-modal" class="popup-gallery md-modal md-effect-1">
+			<div class="md-content form">
+				<h1>REGISTER</h1>
+				<div class="row form-body">
+					<div class="col-xs-12">
+						<form role="form" id="register-form" action="#">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="username" name="username"  required>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Full Name" name="fullname"  required>
+							</div>
+							<div class="form-group">
+								<input type="tel" class="form-control" placeholder="Phone" name="phone" >
+							</div>
+							<div class="form-group">
+								<input type="email" class="form-control" placeholder="Email" name="email"  required>
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" placeholder="Password" name="password1" >
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" placeholder="Repeat Password" name="password2" >
+							</div>
 
-									<p>
-										<div>{% trans "Crazy Backpacker" %} <b>Pin</b></div>
-										<div>{% trans "Cultural Enthusiast" %} <b>Max</b></div>
-										<div>{% trans "Delicacy Blogger" %} <b>Jennifer</b></div>
-										<div>{% trans "Passionate Tour Guide" %} <b>Daniel</b></div>
-										<div>{% trans "Easy Going Musician" %} <b>John</b></div>
-									</p>
+							<div class="row">
+								<div class="dt-form-info col-xs-12 col-sm-8">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox">
+											I Accept the <a href="#">Term & Condition</a> </label>
+									</div>
+								</div>
+								<div class="form-group col-xs-12 col-sm-4">
+									<button type="submit" class="btn-submit">
+										SUBMIT
+									</button>
+								</div>
+							</div>
 
-									<header>
-										<h3>{% trans "Our Mission" %}</h3>
-									</header>
+						</form>
+					</div>
+				</div>
 
-									<p>
-										<div>{% trans "To provide travelers with the experience of authentic beauty" %}</div>
-										<div>{% trans "To provide locals with the chance to share local culture and spirit" %}</div>
-										<div>{% trans "To connect travelers and locals in a more genuine, and deeper way" %}</div>
-									</p>
-
-						</section>
-
-				</article>
-
-			<!-- CTA -->
-				<section id="cta">
-
-					<header>
-						<h2>{% trans "Sign up to become a test pilot" %}</h2>
-					</header>
-					<footer>
-						<p class="pilot-email">
-							<input type="email" id="pilot-email" placeholder="ken@example.com" />
-						</p>
-						<p class="pilot-email">
-							<input type="submit" id="pilot-submit" value="{% trans "Submit!" %}" data-error-msg="{% trans "Check Again!" %}" data-success-msg="{% trans "Okay!" %}" />
-						<p>
-					</footer>
-
-				</section>
-
-			<!-- Footer -->
-				<footer id="footer">
-
-					<ul class="icons">
-						<li><a class="icon circle fa-facebook" href="https://www.facebook.com/pages/FRNCI-Friends-City/1604262479817205?fref=ts"><span class="label">Facebook</span></a></li>
-						<li><a class="icon circle fa-instagram" href="https://instagram.com/friendsandcity/"><span class="label">Instagram</span></a></li>
-						<li><a class="icon circle fa-envelope" href="mailto:contactus@frnci.com"><span class="label">Email</span></a></li>
-					</ul>
-
-					<ul class="copyright">
-						<li>&copy; FRNCi</li>
-					</ul>
-
-				</footer>
-
+				<a href="#" class="md-close right"><i class="icon-cancel"></i></a>
+			</div>
 		</div>
 
-		<!-- Scripts -->
-			<script src="/static/assets/js/jquery.min.js"></script>
-			<script src="/static/assets/js/jquery.dropotron.min.js"></script>
-			<script src="/static/assets/js/jquery.scrolly.min.js"></script>
-			<script src="/static/assets/js/jquery.scrollgress.min.js"></script>
-			<script src="/static/assets/js/bootstrap.min.js"></script>
-			<script src="/static/assets/js/skel.min.js"></script>
-			<script src="/static/assets/js/util.js"></script>
-			<script src="/static/assets/js/main.js"></script>
-			<script src="/static/assets/js/ga.js"></script>
-
+		<div class="md-overlay"></div>
+		<div class="jquery-media-detect"></div>
+		<script type="text/javascript" src="/static/js/jrating.jquery.js"></script>
+		<script type="text/javascript" src="/static/js/myscript.js"></script>
+		<script type="text/javascript" src="/static/js/modal_effects.js"></script>
 	</body>
 </html>
+
