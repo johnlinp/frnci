@@ -1,20 +1,20 @@
 .slide-bg1 {
-    background:url(http://www.travelculturemag.com/wp-content/uploads/2013/03/travel-people.jpg);
+    background:url(/static/images/materials/banner1.jpg);
     background-repeat:no-repeat;
     background-size: cover;
 }
 .slide-bg2 {
-    background:url(http://euxtra.com/en/wp-content/uploads/2013/07/Travel-grant-for-youngsters.jpg);
+    background:url(/static/images/materials/banner2.jpg);
     background-repeat:no-repeat;
     background-size: cover;
 }
 .slide-bg3 {
-    background:url(http://incentivetravelgroup.com/wp-content/uploads/2014/12/iStock_000007193562Medium.jpg);
+    background:url(/static/images/materials/banner3.jpg);
     background-repeat:no-repeat;
     background-size: cover;
 }
 .slide-bg4 {
-    background:url(http://previews.123rf.com/images/luckybusiness/luckybusiness1001/luckybusiness100100066/6210042-happy-group-of-young-people-having-fun-Stock-Photo-group-travel-friends.jpg);
+    background:url(/static/images/materials/banner4.jpg);
     background-repeat:no-repeat;
     background-size: cover;
 }

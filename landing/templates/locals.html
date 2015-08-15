@@ -1,8 +1,9 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 	<head>
 
-		<title>Frnci</title>
+		<title>FRNCi | Find Locals, Travel for Real.</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="/static/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -46,30 +47,18 @@
 								<span class="icon-bars"></span>
 								<span class="icon-bars"></span>
 							</button>
-							<a class="navbar-brand" href="#"><img src="/static/images/materials/logo-orange.png" alt="Logo"></a>
+							<a class="navbar-brand" href="/"><img src="/static/images/materials/logo-orange.png" alt="Logo"></a>
 						</div>
 						<div class="collapse navbar-collapse" id="mynavbar">
 
 							<div class="right-cell">
-								<form class=" navbar-right" style="margin: 25px 0">
+								<form class=" navbar-right" style="margin: 5px 0">
 									<ul class="nav navbar-nav">
-
-										<li class="dropdown">
-											<a href="contact.html">登入</a>
-											<ul class="dropdown-menu">
-												<li></li>
-
-												<li>
-													<a href="contact.html">FB 登入</a>
-												</li>
-
-											</ul>
+										<li>
+											<a href="">FB {% trans "Sign In" %}</a>
 										</li>
 										<li>
-											<a href="">關於我們</a>
-										</li>
-										<li>
-											<a href="">我想帶路</a>
+											<a href="{% trans "https://pin4.typeform.com/to/OS3BNX" %}">{% trans "Register to be Local" %}</a>
 										</li>
 									</ul>
 								</form>
@@ -84,9 +73,9 @@
 				<div class="container">
 					<div class="row header-group">
 						<div class="col-sm-8 col-sm-12">
-							<h2>尋找當地的朋友</h2>
+							<h2>{% trans "Find Your Local Friends" %}</h2>
 							<p style="color:black">
-								體驗當地的人情味 感受與當地的連結
+								{% trans "to explore local spirit and connect to local community" %}
 							</p>
 						</div>
 
@@ -115,21 +104,21 @@
 											<div class="row">
 												<div class="col-md-4">
 													<p class="head_small">
-														我會講
+														{% trans "I speak" %}
 													</p>
 													<p>
 														英語
 													</p>
 													<p>
-														中文
+														{% trans "Mandarin" %}
 													</p>
 													<p>
-														台語
+														{% trans "Taiwanese" %}
 													</p>
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我的個性
+														{% trans "I am" %}
 													</p>
 													<p>
 														樂觀
@@ -143,7 +132,7 @@
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我喜歡
+														{% trans "I like" %}
 													</p>
 													<p>
 														旅遊
@@ -164,17 +153,17 @@
 												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
 											</p>
 											<div class="head_small">
-												可以一起去
+												{% trans "Where we could meet" %}
 											</div>
 											<p>
-												臺北 桃園 宜蘭
+												{% trans "Taipei" %} {% trans "Taoyuan" %} {% trans "Yilan" %}
 											</p>
 										</div>
 									</figcaption>
 								</figure>
 								<div class="row">
 									<div class="col-md-12">
-										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">{% trans "Request to Meet" %}</a>
 									</div>
 
 								</div>
@@ -200,21 +189,21 @@
 											<div class="row">
 												<div class="col-md-4">
 													<p class="head_small">
-														我會講
+														{% trans "I speak" %}
 													</p>
 													<p>
 														英語
 													</p>
 													<p>
-														中文
+														{% trans "Mandarin" %}
 													</p>
 													<p>
-														台語
+														{% trans "Taiwanese" %}
 													</p>
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我的個性
+														{% trans "I am" %}
 													</p>
 													<p>
 														樂觀
@@ -228,7 +217,7 @@
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我喜歡
+														{% trans "I like" %}
 													</p>
 													<p>
 														旅遊
@@ -249,17 +238,17 @@
 												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
 											</p>
 											<div class="head_small">
-												可以一起去
+												{% trans "Where we could meet" %}
 											</div>
 											<p>
-												臺北 桃園 宜蘭
+												{% trans "Taipei" %} {% trans "Taoyuan" %} {% trans "Yilan" %}
 											</p>
 										</div>
 									</figcaption>
 								</figure>
 								<div class="row">
 									<div class="col-md-12">
-										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">{% trans "Request to Meet" %}</a>
 									</div>
 
 								</div>
@@ -285,21 +274,21 @@
 											<div class="row">
 												<div class="col-md-4">
 													<p class="head_small">
-														我會講
+														{% trans "I speak" %}
 													</p>
 													<p>
 														英語
 													</p>
 													<p>
-														中文
+														{% trans "Mandarin" %}
 													</p>
 													<p>
-														台語
+														{% trans "Taiwanese" %}
 													</p>
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我的個性
+														{% trans "I am" %}
 													</p>
 													<p>
 														樂觀
@@ -313,7 +302,7 @@
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我喜歡
+														{% trans "I like" %}
 													</p>
 													<p>
 														旅遊
@@ -334,17 +323,17 @@
 												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
 											</p>
 											<div class="head_small">
-												可以一起去
+												{% trans "Where we could meet" %}
 											</div>
 											<p>
-												臺北 桃園 宜蘭
+												{% trans "Taipei" %} {% trans "Taoyuan" %} {% trans "Yilan" %}
 											</p>
 										</div>
 									</figcaption>
 								</figure>
 								<div class="row">
 									<div class="col-md-12">
-										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">{% trans "Request to Meet" %}</a>
 									</div>
 
 								</div>
@@ -372,21 +361,21 @@
 											<div class="row">
 												<div class="col-md-4">
 													<p class="head_small">
-														我會講
+														{% trans "I speak" %}
 													</p>
 													<p>
 														英語
 													</p>
 													<p>
-														中文
+														{% trans "Mandarin" %}
 													</p>
 													<p>
-														台語
+														{% trans "Taiwanese" %}
 													</p>
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我的個性
+														{% trans "I am" %}
 													</p>
 													<p>
 														樂觀
@@ -400,7 +389,7 @@
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我喜歡
+														{% trans "I like" %}
 													</p>
 													<p>
 														旅遊
@@ -421,17 +410,17 @@
 												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
 											</p>
 											<div class="head_small">
-												可以一起去
+												{% trans "Where we could meet" %}
 											</div>
 											<p>
-												臺北 桃園 宜蘭
+												{% trans "Taipei" %} {% trans "Taoyuan" %} {% trans "Yilan" %}
 											</p>
 										</div>
 									</figcaption>
 								</figure>
 								<div class="row">
 									<div class="col-md-12">
-										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">{% trans "Request to Meet" %}</a>
 									</div>
 
 								</div>
@@ -457,21 +446,21 @@
 											<div class="row">
 												<div class="col-md-4">
 													<p class="head_small">
-														我會講
+														{% trans "I speak" %}
 													</p>
 													<p>
 														英語
 													</p>
 													<p>
-														中文
+														{% trans "Mandarin" %}
 													</p>
 													<p>
-														台語
+														{% trans "Taiwanese" %}
 													</p>
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我的個性
+														{% trans "I am" %}
 													</p>
 													<p>
 														樂觀
@@ -485,7 +474,7 @@
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我喜歡
+														{% trans "I like" %}
 													</p>
 													<p>
 														旅遊
@@ -506,17 +495,17 @@
 												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
 											</p>
 											<div class="head_small">
-												可以一起去
+												{% trans "Where we could meet" %}
 											</div>
 											<p>
-												臺北 桃園 宜蘭
+												{% trans "Taipei" %} {% trans "Taoyuan" %} {% trans "Yilan" %}
 											</p>
 										</div>
 									</figcaption>
 								</figure>
 								<div class="row">
 									<div class="col-md-12">
-										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">{% trans "Request to Meet" %}</a>
 									</div>
 
 								</div>
@@ -542,21 +531,21 @@
 											<div class="row">
 												<div class="col-md-4">
 													<p class="head_small">
-														我會講
+														{% trans "I speak" %}
 													</p>
 													<p>
 														英語
 													</p>
 													<p>
-														中文
+														{% trans "Mandarin" %}
 													</p>
 													<p>
-														台語
+														{% trans "Taiwanese" %}
 													</p>
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我的個性
+														{% trans "I am" %}
 													</p>
 													<p>
 														樂觀
@@ -570,7 +559,7 @@
 												</div>
 												<div class="col-md-4">
 													<p class="head_small">
-														我喜歡
+														{% trans "I like" %}
 													</p>
 													<p>
 														旅遊
@@ -591,17 +580,17 @@
 												去我所愛的口袋餐廳，體驗無極限的夜景和夜生活
 											</p>
 											<div class="head_small">
-												可以一起去
+												{% trans "Where we could meet" %}
 											</div>
 											<p>
-												臺北 桃園 宜蘭
+												{% trans "Taipei" %} {% trans "Taoyuan" %} {% trans "Yilan" %}
 											</p>
 										</div>
 									</figcaption>
 								</figure>
 								<div class="row">
 									<div class="col-md-12">
-										<a class="btn btn-info1 btn-lg" style="width: 100%;">我想媒合</a>
+										<a class="btn btn-info1 btn-lg" style="width: 100%;">{% trans "Request to Meet" %}</a>
 									</div>
 
 								</div>
@@ -622,15 +611,13 @@
 
 									<ul class="list-inline social">
 										<li>
-											<a href="" class="fa fa-facebook-square"></a>
+											<a href="https://www.facebook.com/pages/FRNCI-Friends-City/1604262479817205?fref=ts" class="fa fa-facebook-square"></a>
 										</li>
-
 										<li>
-											<a class="fa fa-circle fa-instagram" href="#"></a>
+											<a href="https://instagram.com/friendsandcity/" class="fa fa-instagram"></a>
 										</li>
-
 										<li>
-											<a class="fa fa-envelope" href="#"></a>
+											<a href="mailto:contactus@frnci.com" class="fa fa-envelope"></a>
 										</li>
 									</ul>
 

@@ -117,7 +117,7 @@ h6 {
   padding: 10px 20px;
 }
 .navbar-brand img {
-  width: 96px;
+  width: 100px;
   height: auto;
 }
 .navbar-default {
@@ -199,7 +199,6 @@ body.home .navbar-default {
 }
 @media (min-width: 768px) {
   .navbar-nav li a {
-    padding: 0px 20px;
     font-size: 1em;
     line-height: 1.7em;
   }
@@ -207,7 +206,7 @@ body.home .navbar-default {
 @media (min-width: 767px) {
   #mynavbar {
     display: table!important;
-    width: 90%;
+    width: 80%;
     padding: 0;
   }
   #mynavbar .left-cell,
