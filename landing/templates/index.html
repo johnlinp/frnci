@@ -23,8 +23,6 @@
 		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="/static/js/modernizr.js"></script>
 		<script type="text/javascript" src="/static/js/bootstrap.js"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&amp;sensor=false"></script>
-		<script type="text/javascript" src="/static/js/google_map.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -44,23 +42,25 @@
 				<div class="row">
 					<div class="col col-sm-12">
 						<div class="navbar-header">
-							<!--div class="visible-xs panel-mobile"><a href="shop_view_cart.html">Cart</a><span>|</span><a href="#" class="md-trigger" data-modal="login-modal" onClick="return false;">Login</a></div-->
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bars"></span>
 								<span class="icon-bars"></span>
 								<span class="icon-bars"></span>
 							</button>
-							<a class="navbar-brand" href="/"><img src="/static/images/materials/logo-orange.png" alt="Logo"></a>
+							<a class="navbar-brand" href="/#"><img src="/static/images/materials/logo-orange.png" alt="Logo"></a>
 						</div>
 						<div class="collapse navbar-collapse" id="mynavbar">
 
 							<div class="right-cell">
 								<form class=" navbar-right" style="margin: 5px 0">
 									<ul class="nav navbar-nav">
-										<li>
-											<a href="">FB {% trans "Sign In" %}</a>
-										</li>
+										{% if user.is_authenticated %}
+											<li><a>{% trans "Hi, " %}{{ info.name }}</a></li>
+											<li class="current"><a href="{% url 'logout' %}">{% trans "Sign Out" %}</a></li>
+										{% else %}
+											<li><a href="{% url 'allaccess-login' 'facebook' %}">Facebook {% trans "Sign In" %}</a></li>
+										{% endif %}
 										<li>
 											<a href="#about-us">{% trans "About Us" %}</a>
 										</li>

@@ -16,14 +16,7 @@ import models
 def home(request):
 	context = {}
 	context.update(csrf(request))
-	if request.user.is_authenticated():
-		try:
-			access = request.user.accountaccess_set.all()[0]
-		except IndexError:
-			access = None
-		else:
-			client = access.api_client
-			context['info'] = client.get_profile_info(raw_token=access.access_token)
+	_get_local_info(request, context)
 	return render(request, 'index.html', context)
 
 
@@ -31,6 +24,7 @@ def locals_area(request, area_str):
 	context = {}
 	locals_info = []
 	context['locals'] = locals_info
+	_get_local_info(request, context)
 
 	show_full = request.user.is_authenticated()
 
@@ -55,6 +49,7 @@ def locals_interest(request, interest_str):
 	context = {}
 	locals_info = []
 	context['locals'] = locals_info
+	_get_local_info(request, context)
 
 	show_full = request.user.is_authenticated()
 
@@ -246,4 +241,16 @@ def _add_single_local(name, sex, email, cell_phone, language_en_strs, place_en_s
 	do_activity.local = local
 	do_activity.activity = activity
 	do_activity.save()
+
+
+def _get_local_info(request, context):
+	if request.user.is_authenticated():
+		try:
+			access = request.user.accountaccess_set.all()[0]
+		except IndexError:
+			access = None
+		else:
+			client = access.api_client
+			context['info'] = client.get_profile_info(raw_token=access.access_token)
+
 
