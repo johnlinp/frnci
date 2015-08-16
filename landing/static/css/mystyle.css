@@ -9217,3 +9217,23 @@ a.md-trigger {
     transform: rotate(359deg);
   }
 }
+
+.feedback-item {
+	max-width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.feedback-item img {
+	max-width: 100%;
+	margin: 20px;
+}
+
+.feedback-item b {
+	color: #d35400;
+}
+
+.feedback-item div {
+	font-size: 20px;
+	min-height: 150px;
+}
