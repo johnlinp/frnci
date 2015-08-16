@@ -1,4 +1,5 @@
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -97,10 +98,9 @@
 											<div class="description text-center">
 												<a class="post-title text_style">{{ local.name }}</a>
 												<div class="local-intro-1">
-													<span><img src="/static/images/icons/lang/zh-tw/中.png" style="width: 40px;" /></span>
-													<span><img src="/static/images/icons/lang/zh-tw/俄.png" style="width: 40px;" /></span>
-													<span><img src="/static/images/icons/lang/zh-tw/日.png" style="width: 40px;" /></span>
-													<span><img src="/static/images/icons/lang/zh-tw/英.png" style="width: 40px;" /></span>
+													{% for language in local.languages %}
+														<span><img src="/static/images/icons/lang/{{ LANGUAGE_CODE }}/{{ language }}.png" style="width: 40px;" /></span>
+													{% endfor %}
 												</div>
 												<div class="row local-intro-2">
 													<div class="col-md-4">

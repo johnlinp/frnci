@@ -43,7 +43,7 @@ class Language(models.Model):
 	name = models.CharField(max_length=10)
 
 	def __str__(self):
-		return ugettext(self.name).encode('utf8')
+		return self.name.encode('utf8')
 
 	def __repr__(self):
 		return str(self)
