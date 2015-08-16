@@ -9237,3 +9237,29 @@ a.md-trigger {
 	font-size: 20px;
 	min-height: 150px;
 }
+
+.local-intro-1 {
+	height: 60px;
+	overflow: hidden;
+}
+
+.local-intro-2 {
+	height: 200px;
+	overflow: hidden;
+}
+
+.local-intro-3 {
+	height: 150px;
+	overflow: hidden;
+}
+
+.local-intro-4 {
+	height: 150px;
+	overflow: hidden;
+}
+
+.login-to-see-more {
+	text-align: center;
+}
+
+

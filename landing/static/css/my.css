@@ -76,7 +76,7 @@ p {
 	cursor: pointer !important;
 }
 .productImage:after {
-	padding-top: 60% !important;
+	padding-top: 100% !important;
 	content: "" !important;
 	display: block !important;
 }
