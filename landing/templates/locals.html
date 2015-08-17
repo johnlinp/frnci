@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load cloudinary %}
 {% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
 <html>
@@ -91,7 +92,9 @@
 								<div class="masonry-item">
 									<figure>
 										<div class="top-image productImage">
-											<img src="/static/images/locals/{{ local.email_hash }}" alt="Local Image" onError="this.onerror=null;this.src='/static/images/materials/no-such-person.png';" />
+											{% with 'locals/'|add:local.email_hash as local_image_path %}
+												{% cloudinary local_image_path %}
+											{% endwith %}
 										</div>
 
 										<figcaption>
