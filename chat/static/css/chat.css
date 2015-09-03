@@ -1,0 +1,76 @@
+#main {
+	width: 100%;
+	height: 100%;
+	padding: 40px;
+}
+
+#main .blank {
+	height: 5%
+}
+
+#chat {
+	width: 100%;
+	height: 95%;
+	display: flex;
+}
+
+#friend-list {
+	display: inline-block;
+	width: 25%;
+	height: 100%;
+	overflow-y: auto;
+	text-overflow: ellipsis;
+	background: #e2e2e2;
+}
+
+.friend-item {
+	padding: 20px;
+	cursor: pointer;
+	background: #f6f6f6;
+}
+
+.friend-item.active {
+	background: #eaeaea;
+}
+
+.friend-item .name {
+	font-weight: bold;
+}
+
+#content {
+	display: inline-block;
+	width: 75%;
+	height: 100%;
+}
+
+#conversation {
+	width: 100%;
+	height: 80%;
+	padding: 20px;
+	overflow-y: auto;
+	word-wrap: break-word;
+	background: #f0f0f0;
+}
+
+.sentence .name {
+	font-weight: bold;
+}
+
+.sentence .words {
+	text-indent: 30px;
+}
+
+#reply {
+	width: 100%;
+	height: 20%;
+	background: #f8f8f8;
+}
+
+#typing {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	resize: none;
+	padding: 20px;
+	background: #f8f8f8;
+}
