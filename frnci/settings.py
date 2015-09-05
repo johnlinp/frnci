@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 	'chat',
 	'allaccess',
 	'cloudinary',
+	'swampdragon',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -98,6 +99,10 @@ USE_TZ = True
 LOGIN_URL = '/'
 
 LOGIN_REDIRECT_URL = '/'
+
+SWAMP_DRAGON_CONNECTION = ('swampdragon_auth.socketconnection.HttpDataConnection', '/data')
+DRAGON_URL = os.environ.get('DRAGON_URL')
+SWAMP_DRAGON_HOST = os.environ.get('SWAMP_DRAGON_HOST')
 
 
 # Static files (CSS, JavaScript, Images)

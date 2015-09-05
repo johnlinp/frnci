@@ -5,7 +5,7 @@
 }
 
 #main .blank {
-	height: 5%
+	height: 8%
 }
 
 #chat {
@@ -27,6 +27,7 @@
 	padding: 20px;
 	cursor: pointer;
 	background: #f6f6f6;
+	overflow-x: hidden;
 }
 
 .friend-item.active {

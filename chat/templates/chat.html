@@ -1,5 +1,7 @@
+{% load staticfiles %}
 {% load i18n %}
 {% load cloudinary %}
+{% load swampdragon_tags %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -27,7 +29,6 @@
 		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="/static/js/modernizr.js"></script>
 		<script type="text/javascript" src="/static/js/bootstrap.js"></script>
-		<script type="text/javascript" src="/static/js/chat.js"></script>
 
 	</head>
 	<body class="blog-classic">
@@ -36,12 +37,31 @@
 				<div class="row">
 					<div class="col col-sm-12">
 						<div class="navbar-header">
-							<a class="navbar-brand" href="/"><img src="/static/images/materials/logo-orange.png" alt="Logo"></a>
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bars"></span>
+							</button>
+							<a class="navbar-brand" href="/#"><img src="/static/images/materials/logo-orange.png" alt="Logo"></a>
+						</div>
+						<div class="collapse navbar-collapse" id="mynavbar">
+
+							<div class="right-cell">
+								<form class=" navbar-right" style="margin: 5px 0">
+									<ul class="nav navbar-nav">
+										{% if user.is_authenticated %}
+											<li><a>{% trans "Hi, " %}{{ info.name }}</a></li>
+											<li class="current"><a href="{% url 'logout' %}">{% trans "Sign Out" %}</a></li>
+										{% else %}
+											<li><a href="{% url 'allaccess-login' 'facebook' %}">Facebook {% trans "Sign In" %}</a></li>
+										{% endif %}
+									</ul>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</nav><!-- Main Navigation --><!-- Main Navigation -->
+		</nav><!-- Main Navigation -->
 
 
 		<div id="main">
@@ -49,36 +69,12 @@
 
 			<div id="chat">
 				<div id="friend-list">
-					<div class="friend-item">
-						<div class="name">pin</div>
-						<div class="words">hey</div>
-					</div>
-					<div class="friend-item active">
-						<div class="name">ng</div>
-						<div class="words">how are you doing now</div>
-					</div>
-					<div class="friend-item">
-						<div class="name">wendy</div>
-						<div class="words">what</div>
-					</div>
-					<div class="friend-item">
-						<div class="name">max</div>
-						<div class="words">yo</div>
-					</div>
 				</div>
 				<div id="content">
 					<div id="conversation">
-						<div class="sentence">
-							<div class="name">ng</div>
-							<div class="words">how are you</div>
-						</div>
-						<div class="sentence">
-							<div class="name">john</div>
-							<div class="words">good</div>
-						</div>
 					</div>
 					<div id="reply">
-						<textarea id="typing" placeholder="type something"></textarea>
+						<div contenteditable="true" id="typing" placeholder="type something"></div>
 					</div>
 				</div>
 			</div>
@@ -88,6 +84,9 @@
 		<div class="blog-masonry-container blog_classic">
 			<div class="md-overlay"></div>
 			<div class="jquery-media-detect"></div>
+			{% swampdragon_settings %}
+			<script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+			<script type="text/javascript" src="/static/js/chat.js"></script>
 			<script type="text/javascript" src="/static/js/jrating.jquery.js"></script>
 			<script type="text/javascript" src="/static/js/myscript.js"></script>
 			<script type="text/javascript" src="/static/js/modal_effects.js"></script>

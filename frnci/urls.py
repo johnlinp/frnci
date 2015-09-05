@@ -8,6 +8,8 @@ urlpatterns = patterns('',
     url(r'^locals/interest/(?P<interest_str>.*)/$', 'landing.views.locals_interest', name='locals-interest'),
 
     url(r'^chat/$', 'chat.views.main', name='chat-main'),
+    url(r'^chat/friend-list/$', 'chat.views.get_friend_list'),
+    url(r'^chat/conversation/$', 'chat.views.get_conversation'),
 
     url(r'^pilot/$', 'landing.views.pilot', name='pilot'),
 
