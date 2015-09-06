@@ -103,6 +103,7 @@ LOGIN_REDIRECT_URL = '/'
 SWAMP_DRAGON_CONNECTION = ('swampdragon_auth.socketconnection.HttpDataConnection', '/data')
 DRAGON_URL = os.environ.get('DRAGON_URL')
 SWAMP_DRAGON_HOST = os.environ.get('SWAMP_DRAGON_HOST')
+SWAMP_DRAGON_PORT = os.environ.get('PORT')
 
 
 # Static files (CSS, JavaScript, Images)
