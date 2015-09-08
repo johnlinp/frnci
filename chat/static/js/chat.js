@@ -1,8 +1,6 @@
 (function() {
 	var updateFriendItem = function(friendId, words) {
 		$('.friend-item').each(function() {
-			console.log(friendId);
-			console.log($(this));
 			if ($(this).attr('user-id') == friendId) {
 				$(this).find('.words').html(words);
 				return false;
@@ -36,7 +34,7 @@
 
 			var friendId = getActiveFriendId();
 
-			swampdragon.create('sentence', {words: words, recipient_id: friendId}, function(context, data) {});
+			swampdragon.create('sentence', {words: words, recipient_id: friendId});
 		});
 	};
 
@@ -77,6 +75,7 @@
 	var loadFriendConversation = function() {
 		var activeFriendId = getActiveFriendId();
 
+		$('#conversation').empty();
 		$.get('/chat/conversation/', {friend_id: activeFriendId}, function(response) {
 			if (!response.success) {
 				console.log('load chat conversation failed: ' + response.message);
@@ -87,6 +86,15 @@
 
 			$('#typing').focus();
 		}, 'json');
+	};
+
+	var registerClickFriendItem = function($friendItem) {
+		$friendItem.click(function() {
+			$('.friend-item').removeClass('active');
+			$friendItem.addClass('active');
+
+			loadFriendConversation();
+		});
 	};
 
 	var renderFriendList = function(friendList) {
@@ -111,6 +119,8 @@
 			$friendItem.append($friendWords);
 
 			$friendItem.attr('user-id', friendItem.user_id);
+
+			registerClickFriendItem($friendItem);
 
 			$('#friend-list').append($friendItem);
 		}

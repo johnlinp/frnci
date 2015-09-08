@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.template.context_processors import csrf
 from django.db.models import Q
 from django.contrib.auth.models import User
@@ -11,7 +12,8 @@ def main(request):
 	context = {}
 	if request.user.is_authenticated():
 		context['info'] = {'name': request.user.username}
-	return render(request, 'chat.html', context)
+		return render(request, 'chat.html', context)
+	return redirect('/admin/login/?next=/chat/')
 
 
 def get_friend_list(request):
